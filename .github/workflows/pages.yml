@@ -40,8 +40,9 @@ jobs:
           production_css = '\n'.join([
               '<link rel="stylesheet" href="study-nav.css?v=20260822-1">',
               '<link rel="stylesheet" href="presentation-fixes.css?v=20260822-1">',
+              '<link rel="stylesheet" href="typography-fix.css?v=20260822-1">',
           ])
-          if 'study-nav.css?v=20260822-1' not in html:
+          if 'typography-fix.css?v=20260822-1' not in html:
               html = html.replace('</head>', production_css + '\n</head>')
 
           nav_script = '<script src="study-nav.js?v=20260822-1"></script>'
