@@ -1,0 +1,157 @@
+/* Presentation refinements requested for the Al Jadeed concept site */
+
+main section.hero{
+  min-height:100vh!important;
+  height:auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+  padding-top:118px!important;
+  padding-bottom:68px!important;
+}
+
+main section.hero .hero-grid{
+  width:min(100%,1120px)!important;
+  margin:0 auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:30px!important;
+}
+
+main section.hero .hero-grid>div:first-child{
+  width:min(100%,980px)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+main section.hero .eyebrow{
+  justify-content:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+main section.hero .arabic-title,
+main section.hero .display,
+main section.hero .hero-line,
+main section.hero .lede{
+  text-align:center!important;
+}
+
+main section.hero .lede{
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+main section.hero .chips{
+  justify-content:center!important;
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+main section.hero .hero-panel{
+  width:min(100%,880px)!important;
+  margin:0 auto!important;
+  text-align:center!important;
+  padding:26px 28px!important;
+}
+
+main section.hero .hero-panel>strong{
+  max-width:720px!important;
+  margin:12px auto 24px!important;
+  text-align:center!important;
+}
+
+main section.hero .meta-lines{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:0!important;
+  border-top:1px solid rgba(242,207,122,.08)!important;
+  border-bottom:1px solid rgba(242,207,122,.08)!important;
+}
+
+main section.hero .meta-lines div{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:5px!important;
+  padding:13px 10px!important;
+  border-top:0!important;
+  border-right:1px solid rgba(242,207,122,.08)!important;
+}
+
+main section.hero .meta-lines div:last-child{border-right:0!important}
+main section.hero .meta-lines b{text-align:center!important}
+
+main section.hero .metric-grid.four{
+  width:min(100%,1120px)!important;
+  margin:34px auto 0!important;
+}
+
+main section.hero .metric-grid article{
+  text-align:center!important;
+}
+
+main section.hero .credit{
+  width:100%!important;
+  margin:20px auto 0!important;
+  text-align:center!important;
+}
+
+main section.hero .orb-a{
+  right:-210px!important;
+  top:-230px!important;
+}
+
+main section.hero .orb-b{
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  bottom:-350px!important;
+}
+
+@media(max-width:1050px){
+  main section.hero{
+    min-height:auto!important;
+    justify-content:flex-start!important;
+    padding-top:52px!important;
+    padding-bottom:54px!important;
+  }
+  main section.hero .hero-grid{gap:25px!important}
+  main section.hero .hero-panel{width:min(100%,760px)!important}
+}
+
+@media(max-width:700px){
+  main section.hero{
+    padding-top:38px!important;
+    padding-bottom:42px!important;
+  }
+  main section.hero .display{font-size:clamp(48px,17vw,76px)!important;line-height:.94!important}
+  main section.hero .arabic-title{font-size:clamp(38px,13vw,54px)!important}
+  main section.hero .hero-line{font-size:clamp(18px,5.3vw,23px)!important;line-height:1.25!important}
+  main section.hero .lede{font-size:15px!important;line-height:1.55!important}
+  main section.hero .hero-panel{padding:22px 18px!important;border-radius:18px!important}
+  main section.hero .hero-panel>strong{font-size:27px!important}
+  main section.hero .meta-lines{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  main section.hero .meta-lines div:nth-child(2){border-right:0!important}
+  main section.hero .meta-lines div:nth-child(-n+2){border-bottom:1px solid rgba(242,207,122,.08)!important}
+  main section.hero .metric-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-top:28px!important}
+  main section.hero .chips{gap:7px!important}
+  main section.hero .chip{font-size:8px!important}
+}
+
+@media(max-width:420px){
+  main section.hero .meta-lines{grid-template-columns:1fr!important}
+  main section.hero .meta-lines div{border-right:0!important;border-bottom:1px solid rgba(242,207,122,.08)!important}
+  main section.hero .meta-lines div:last-child{border-bottom:0!important}
+}
+
+@media print{
+  main section.hero{min-height:0!important;padding-top:30px!important;padding-bottom:30px!important}
+}
