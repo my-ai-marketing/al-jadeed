@@ -93,6 +93,7 @@ jobs:
               '<link rel="stylesheet" href="typography-fix.css?v=20260822-1">',
               '<link rel="stylesheet" href="budget-section.css?v=20260822-1">',
               '<link rel="stylesheet" href="whatsapp-cta.css?v=20260822-1">',
+              '<link rel="stylesheet" href="responsive-balance.css?v=20260822-1">',
           ])
           if 'budget-section.css?v=20260822-1' not in html:
               html = html.replace('</head>', production_css + '\n</head>')
