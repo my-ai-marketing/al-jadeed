@@ -1,1 +1,25 @@
-(()=>{if(document.querySelector('.whatsapp-cta'))return;const message='Hello Elissa, I reviewed The Builders program concept for Al Jadeed and would like to discuss it with you.';const link=document.createElement('a');link.className='whatsapp-cta';link.href=`https://wa.me/?text=${encodeURIComponent(message)}`;link.target='_blank';link.rel='noopener';link.setAttribute('aria-label','Contact Elissa on WhatsApp');link.innerHTML='<span class="whatsapp-cta__icon" aria-hidden="true"><svg viewBox="0 0 32 32" role="img"><path d="M19.11 17.21c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.08 1.77-.72 2.02-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM16.04 3.2c-7.07 0-12.82 5.72-12.82 12.77 0 2.25.59 4.45 1.71 6.38L3.1 29.1l6.93-1.81a12.85 12.85 0 0 0 6 1.53h.01c7.07 0 12.82-5.72 12.82-12.77S23.11 3.2 16.04 3.2zm0 23.46h-.01c-1.91 0-3.79-.51-5.42-1.47l-.39-.23-4.11 1.07 1.1-4-.25-.41a10.57 10.57 0 0 1-1.62-5.65c0-5.86 4.79-10.63 10.69-10.63s10.69 4.77 10.69 10.63-4.79 10.69-10.68 10.69z"/></svg></span><span class="whatsapp-cta__label">Contact Elissa</span><span class="whatsapp-cta__hint">Discuss the program</span>';document.body.appendChild(link);})();
+(() => {
+  if (document.querySelector('.whatsapp-cta')) return;
+
+  const phone = '96178794911';
+  const message = "Hello Elissa, I've reviewed The Builders concept and would like to discuss it with you.";
+
+  const link = document.createElement('a');
+  link.className = 'whatsapp-cta';
+  link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.title = 'Discuss The Builders on WhatsApp';
+  link.setAttribute('aria-label', 'Discuss The Builders with Elissa on WhatsApp');
+
+  link.innerHTML = `
+    <span class="whatsapp-cta__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.208-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.267c0-5.45 4.436-9.886 9.892-9.886 2.64 0 5.122 1.03 6.99 2.899a9.825 9.825 0 0 1 2.893 7.003c-.003 5.45-4.44 9.887-9.891 9.887m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.14 1.588 5.945L.057 24l6.3-1.654a11.882 11.882 0 0 0 5.69 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.481-8.413Z"/>
+      </svg>
+    </span>
+    <span class="whatsapp-cta__label">Discuss on WhatsApp</span>
+  `;
+
+  document.body.appendChild(link);
+})();
