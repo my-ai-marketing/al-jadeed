@@ -1,0 +1,220 @@
+/* Final typography coverage for all remaining undersized text */
+
+/* Episode / example details */
+.question-grid span{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.question-grid p{
+  font-size:19px!important;
+  line-height:1.4!important;
+}
+.evidence-note{
+  font-size:12.5px!important;
+  line-height:1.65!important;
+}
+
+/* Host section */
+.host-role p{
+  font-size:14px!important;
+  line-height:1.68!important;
+}
+.host-signature{
+  font-size:12px!important;
+  line-height:1.55!important;
+}
+.host-qualities b{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.host-qualities p{
+  font-size:14px!important;
+  line-height:1.65!important;
+}
+.studio-title span{
+  font-size:12px!important;
+}
+.camera-frame{
+  font-size:10px!important;
+}
+
+/* Production and digital engine */
+.production-grid span{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.flow-main span,
+.flow-main small{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.flow-outputs b{
+  font-size:14px!important;
+  line-height:1.35!important;
+}
+.flow-outputs small{
+  font-size:12.5px!important;
+  line-height:1.5!important;
+}
+
+/* Commercial potential */
+.commercial-model span{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.commercial-model strong{
+  font-size:15.5px!important;
+  line-height:1.4!important;
+}
+.commercial-model p{
+  font-size:13.5px!important;
+  line-height:1.65!important;
+}
+.guardrail b{
+  font-size:12px!important;
+  line-height:1.4!important;
+}
+.guardrail p{
+  font-size:13px!important;
+  line-height:1.65!important;
+}
+
+/* Why Al Jadeed */
+.fit-score span{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.fit-score p{
+  font-size:13.5px!important;
+  line-height:1.6!important;
+}
+.fit-list h3{
+  font-size:18px!important;
+  line-height:1.35!important;
+}
+.fit-list p{
+  font-size:14px!important;
+  line-height:1.65!important;
+}
+
+/* Closing proposal */
+.proposal-box span{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.proposal-box ul{
+  font-size:14px!important;
+  line-height:1.75!important;
+}
+.final-credit span,
+.final-credit small{
+  font-size:11.5px!important;
+  line-height:1.5!important;
+}
+
+/* Sources / footer */
+.sources b{
+  font-size:12.5px!important;
+  line-height:1.4!important;
+}
+.sources p{
+  font-size:12.5px!important;
+  line-height:1.65!important;
+}
+.source-links a{
+  font-size:12px!important;
+  line-height:1.4!important;
+  padding:7px 9px!important;
+}
+.present-exit{
+  font-size:11.5px!important;
+}
+
+/* Compact metric grids used in later sections */
+.metric-grid.three article strong{
+  font-size:13.5px!important;
+  line-height:1.35!important;
+}
+.metric-grid.three article p{
+  font-size:12.5px!important;
+  line-height:1.55!important;
+}
+
+@media(max-width:760px){
+  .question-grid span,
+  .host-qualities b,
+  .production-grid span,
+  .flow-main span,
+  .commercial-model span,
+  .fit-score span,
+  .proposal-box span{
+    font-size:11px!important;
+  }
+
+  .question-grid p{
+    font-size:18px!important;
+  }
+  .evidence-note,
+  .host-signature,
+  .flow-main small,
+  .flow-outputs small,
+  .sources b,
+  .source-links a,
+  .final-credit span,
+  .final-credit small{
+    font-size:12px!important;
+  }
+
+  .host-role p,
+  .host-qualities p,
+  .fit-list p,
+  .proposal-box ul{
+    font-size:14px!important;
+  }
+
+  .commercial-model strong{
+    font-size:15px!important;
+  }
+  .commercial-model p,
+  .guardrail p,
+  .fit-score p{
+    font-size:13.5px!important;
+  }
+  .guardrail b{
+    font-size:12px!important;
+  }
+  .fit-list h3{
+    font-size:17px!important;
+  }
+  .metric-grid.three article strong{
+    font-size:13px!important;
+  }
+  .metric-grid.three article p{
+    font-size:12.5px!important;
+  }
+  .camera-frame{
+    font-size:9.5px!important;
+  }
+  .sources p{
+    font-size:12.5px!important;
+  }
+}
+
+@media(max-width:420px){
+  .card p,
+  .concept-card p,
+  .axis-card p,
+  .audience-card p,
+  .guest-card p,
+  .segment-card p,
+  .production-grid p,
+  .sponsor-grid p,
+  .growth-path p,
+  .timeline-row p,
+  .host-role p,
+  .host-qualities p,
+  .fit-list p,
+  .proposal-box ul{
+    font-size:14px!important;
+  }
+}
