@@ -56,6 +56,27 @@ jobs:
           for old, new in replacements:
               html = html.replace(old, new)
 
+          # Add the budget chapter to the navigation and renumber later chapters.
+          nav_old = '<a href="#commercial">13 / Commercial potential</a>\n        <a href="#aljadeed">14 / Why Al Jadeed</a>\n        <a href="#growth">15 / Growth path</a>\n        <a href="#proposal">16 / Closing proposal</a>'
+          nav_new = '<a href="#budget">13 / Budget &amp; production investment</a>\n        <a href="#commercial">14 / Commercial potential</a>\n        <a href="#aljadeed">15 / Why Al Jadeed</a>\n        <a href="#growth">16 / Growth path</a>\n        <a href="#proposal">17 / Closing proposal</a>'
+          html = html.replace(nav_old, nav_new)
+
+          chapter_replacements = [
+              ('<span class="section-label">13 / Commercial potential</span>', '<span class="section-label">14 / Commercial potential</span>'),
+              ('<span class="section-label">14 / Why Al Jadeed</span>', '<span class="section-label">15 / Why Al Jadeed</span>'),
+              ('<span class="section-label">15 / Growth potential</span>', '<span class="section-label">16 / Growth potential</span>'),
+              ('<span class="section-label">16 / Closing proposal</span>', '<span class="section-label">17 / Closing proposal</span>'),
+          ]
+          for old, new in chapter_replacements:
+              html = html.replace(old, new)
+
+          budget_fragment = Path('budget-section.html').read_text(encoding='utf-8').rstrip()
+          if 'id="budget"' not in html:
+              marker = '      <section id="commercial">'
+              if marker not in html:
+                  raise SystemExit('Commercial section marker not found for budget insertion')
+              html = html.replace(marker, budget_fragment + '\n\n' + marker, 1)
+
           # Remove em dashes from all visible source copy in the deployed site.
           html = re.sub(r'\s*—\s*', ', ', html)
 
@@ -70,9 +91,10 @@ jobs:
               '<link rel="stylesheet" href="study-nav.css?v=20260822-1">',
               '<link rel="stylesheet" href="presentation-fixes.css?v=20260822-1">',
               '<link rel="stylesheet" href="typography-fix.css?v=20260822-1">',
+              '<link rel="stylesheet" href="budget-section.css?v=20260822-1">',
               '<link rel="stylesheet" href="whatsapp-cta.css?v=20260822-1">',
           ])
-          if 'whatsapp-cta.css?v=20260822-1' not in html:
+          if 'budget-section.css?v=20260822-1' not in html:
               html = html.replace('</head>', production_css + '\n</head>')
 
           scripts = '\n'.join([
