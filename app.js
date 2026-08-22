@@ -10,6 +10,17 @@
   const printButton = document.getElementById('printButton');
   const progressBar = document.getElementById('progressBar');
 
+  const loadTypographyFix = () => {
+    if (document.querySelector('link[data-typography-fix]')) return;
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = 'typography-fix.css?v=20260822d';
+    style.dataset.typographyFix = 'true';
+    document.head.appendChild(style);
+  };
+
+  loadTypographyFix();
+
   const closeMenu = () => {
     sideNav?.classList.remove('open');
     menuScrim?.classList.remove('show');
