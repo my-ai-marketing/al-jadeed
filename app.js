@@ -7,8 +7,9 @@
   const sideNav = document.getElementById('sideNav');
   const menuScrim = document.getElementById('menuScrim');
   const presentButton = document.getElementById('presentButton');
-  const printButton = document.getElementById('printButton');
   const progressBar = document.getElementById('progressBar');
+
+  document.getElementById('printButton')?.remove();
 
   const loadTypographyFix = () => {
     if (!document.querySelector('link[data-typography-fix]')) {
@@ -119,7 +120,6 @@
   };
 
   presentButton?.addEventListener('click', () => setPresentMode(true));
-  printButton?.addEventListener('click', () => window.print());
   window.addEventListener('keydown', event => {
     if (event.key === 'Escape' && body.classList.contains('present-mode')) setPresentMode(false);
   });
