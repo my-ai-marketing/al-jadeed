@@ -1,38 +1,47 @@
-/* Typography system refinement for consistent desktop and mobile readability */
+/* Readability pass: raise undersized secondary/UI copy without inflating display headlines */
 
 :root{
-  --type-label:10px;
-  --type-small:11px;
-  --type-body:13px;
-  --type-body-lg:15px;
-  --type-card-title:17px;
+  --type-label:11px;
+  --type-small:12px;
+  --type-body:14px;
+  --type-card-title:18px;
 }
 
 body{
   font-size:16px;
-  line-height:1.5;
+  line-height:1.55;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
 
-/* Main display hierarchy */
-.display{
-  font-size:clamp(62px,6.7vw,96px)!important;
-  line-height:.94!important;
-  letter-spacing:-.052em!important;
+/* Sidebar / navigation */
+.brand h1{
+  font-size:12px!important;
+  line-height:1.25!important;
 }
-.display.small{
-  font-size:clamp(40px,4.5vw,64px)!important;
-  line-height:1.01!important;
-  letter-spacing:-.045em!important;
+.brand p{
+  font-size:11px!important;
+  line-height:1.4!important;
 }
-.lede{
-  font-size:clamp(17px,1.45vw,20px)!important;
-  line-height:1.58!important;
+.nav a{
+  font-size:12px!important;
+  line-height:1.25!important;
+  padding:7px 10px!important;
 }
-.section-head .lede{max-width:980px}
+.btn{
+  font-size:11px!important;
+  line-height:1.2!important;
+}
+.side-note{
+  font-size:10.5px!important;
+  line-height:1.55!important;
+}
+.mobile-brand{
+  font-size:11.5px!important;
+  line-height:1.25!important;
+}
 
-/* Labels, eyebrow copy and utility text */
+/* Section labels, eyebrows and utility copy */
 .eyebrow,
 .section-label,
 .kicker,
@@ -48,60 +57,47 @@ body{
 .episode-badge span,
 .episode-badge small{
   font-size:var(--type-label)!important;
-  line-height:1.4!important;
-}
-
-/* Hero */
-main section.hero .arabic-title{
-  font-size:clamp(40px,4vw,58px)!important;
-  line-height:1!important;
-}
-main section.hero .hero-line{
-  font-size:clamp(21px,2vw,29px)!important;
-  line-height:1.28!important;
-}
-main section.hero .lede{
-  font-size:clamp(17px,1.4vw,20px)!important;
-  line-height:1.58!important;
-}
-main section.hero .chip{
-  font-size:11px!important;
-  line-height:1.25!important;
-  padding:8px 12px!important;
-}
-main section.hero .hero-panel>strong{
-  font-size:clamp(27px,2.4vw,34px)!important;
-  line-height:1.12!important;
-}
-main section.hero .meta-lines div{
-  font-size:11px!important;
-  line-height:1.35!important;
-}
-main section.hero .meta-lines b{
-  font-size:12px!important;
-}
-main section.hero .metric-grid article span{
-  font-size:22px!important;
-}
-main section.hero .metric-grid article strong{
-  font-size:14px!important;
-  line-height:1.3!important;
-}
-main section.hero .metric-grid article p{
-  font-size:12px!important;
-  line-height:1.55!important;
-}
-main section.hero .credit{
-  font-size:11px!important;
   line-height:1.45!important;
 }
 
-/* Core card typography */
+/* Intro / lead copy */
+.lede,
+main section.hero .lede{
+  font-size:clamp(17px,1.45vw,20px)!important;
+  line-height:1.62!important;
+}
+.section-head .lede{max-width:980px}
+
+/* Hero supporting copy */
+main section.hero .chip{
+  font-size:12px!important;
+  line-height:1.3!important;
+  padding:8px 12px!important;
+}
+main section.hero .meta-lines div{
+  font-size:12px!important;
+  line-height:1.4!important;
+}
+main section.hero .meta-lines b{
+  font-size:13px!important;
+}
+main section.hero .metric-grid article strong{
+  font-size:14px!important;
+  line-height:1.35!important;
+}
+main section.hero .metric-grid article p{
+  font-size:13px!important;
+  line-height:1.58!important;
+}
+main section.hero .credit{
+  font-size:11.5px!important;
+  line-height:1.5!important;
+}
+
+/* Core cards */
 .card h3,
-.concept-card h3,
 .axis-card h3,
 .audience-card h3,
-.guest-card h3,
 .segment-card h3,
 .production-grid h3,
 .sponsor-grid h3,
@@ -122,57 +118,46 @@ main section.hero .credit{
   line-height:1.65!important;
 }
 
-/* Feature cards and large statements */
-.statement-card h3{
-  font-size:clamp(31px,3.2vw,45px)!important;
-  line-height:1.08!important;
-}
+/* Feature / concept cards */
 .statement-card p{
   font-size:14px!important;
   line-height:1.68!important;
 }
 .concept-card h3{
   font-size:24px!important;
-  line-height:1.15!important;
+  line-height:1.18!important;
 }
 .concept-card b{
-  font-size:10px!important;
-}
-.callout h3{
-  font-size:clamp(25px,2.6vw,32px)!important;
-  line-height:1.16!important;
-}
-.callout p{
-  font-size:13px!important;
-  line-height:1.65!important;
-}
-.callout small{
-  font-size:10px!important;
-}
-
-/* Opportunity and research strip */
-.stack .card .num,
-.num{
-  font-size:27px!important;
-}
-.research-strip p{
-  font-size:12px!important;
-  line-height:1.58!important;
-}
-.research-strip a{
-  font-size:11px!important;
-}
-
-/* Positioning and audience */
-.axis-card>span{
-  font-size:25px!important;
-}
-.spectrum-head{
   font-size:11px!important;
   line-height:1.4!important;
 }
-.spectrum p{
+.callout p{
+  font-size:14px!important;
+  line-height:1.65!important;
+}
+.callout small{
   font-size:11px!important;
+  line-height:1.4!important;
+}
+
+/* Research / source information */
+.research-strip p{
+  font-size:12.5px!important;
+  line-height:1.62!important;
+}
+.research-strip a{
+  font-size:12px!important;
+  line-height:1.4!important;
+}
+
+/* Positioning */
+.spectrum-head{
+  font-size:11.5px!important;
+  line-height:1.45!important;
+}
+.spectrum p{
+  font-size:11.5px!important;
+  line-height:1.5!important;
 }
 .audience-card h3{
   font-size:18px!important;
@@ -181,87 +166,99 @@ main section.hero .credit{
 /* Guest section */
 .guest-card h3{
   font-size:24px!important;
-  line-height:1.12!important;
+  line-height:1.15!important;
 }
 .guest-card a,
 .source-note{
-  font-size:11px!important;
-  line-height:1.45!important;
+  font-size:11.5px!important;
+  line-height:1.5!important;
 }
 
 /* Episode architecture */
-.time{
-  font-size:27px!important;
-}
 .timeline-row h3{
   font-size:24px!important;
-  line-height:1.16!important;
+  line-height:1.18!important;
 }
 .timeline-row p{
-  font-size:13px!important;
+  font-size:14px!important;
   line-height:1.65!important;
 }
 .format-note{
-  font-size:11px!important;
-  line-height:1.55!important;
+  font-size:11.5px!important;
+  line-height:1.6!important;
 }
 
 /* Signature segments */
-.segment-card>span{
-  font-size:28px!important;
-}
 .segment-card h3{
   font-size:18px!important;
 }
 
-/* Example episode */
-.episode-hero blockquote{
-  font-size:clamp(26px,2.8vw,38px)!important;
-  line-height:1.15!important;
-}
-.episode-badge strong{
-  font-size:56px!important;
-  line-height:1!important;
-}
-
-/* Buttons and navigation */
-.btn{
-  font-size:10px!important;
-  line-height:1.2!important;
-}
+/* Study navigation / overlays if enabled */
 .study-chapter-copy small{
-  font-size:9px!important;
+  font-size:10.5px!important;
 }
 .study-chapter-title{
-  font-size:12px!important;
+  font-size:13px!important;
 }
 .study-overlay-kicker{
-  font-size:10px!important;
+  font-size:11px!important;
 }
 .study-overlay-head p{
-  font-size:13px!important;
-  line-height:1.6!important;
+  font-size:14px!important;
+  line-height:1.62!important;
 }
 .study-overlay-link strong{
-  font-size:14px!important;
-  line-height:1.35!important;
+  font-size:15px!important;
+  line-height:1.4!important;
 }
 .study-overlay-link span:last-child{
-  font-size:10px!important;
+  font-size:11px!important;
 }
 .study-rail-dot:after{
-  font-size:10px!important;
+  font-size:11px!important;
 }
 .study-mobile-context b,
 .study-mobile-context span{
-  font-size:11px!important;
+  font-size:11.5px!important;
 }
 .study-mobile-menu{
-  font-size:10px!important;
+  font-size:11px!important;
 }
 .study-mobile-nav a{
+  font-size:13.5px!important;
+  line-height:1.4!important;
+}
+
+/* Budget / production investment supporting copy */
+.budget-cadence span,
+.budget-run>span,
+.budget-efficiency span{
+  font-size:11px!important;
+  line-height:1.4!important;
+}
+.budget-cadence small,
+.budget-run>small,
+.budget-run-note{
+  font-size:12px!important;
+  line-height:1.5!important;
+}
+.budget-lines span{
   font-size:13px!important;
-  line-height:1.35!important;
+}
+.budget-lines b{
+  font-size:14px!important;
+}
+.budget-launch p{
+  font-size:13.5px!important;
+  line-height:1.65!important;
+}
+.budget-launch li{
+  font-size:12.5px!important;
+  line-height:1.6!important;
+}
+.budget-efficiency p{
+  font-size:13px!important;
+  line-height:1.65!important;
 }
 
 /* Footer and supporting copy */
@@ -270,20 +267,16 @@ footer p,
 footer a,
 .footer-note,
 .footer-copy{
-  font-size:11px!important;
-  line-height:1.55!important;
+  font-size:12px!important;
+  line-height:1.6!important;
 }
 
 @media(max-width:1050px){
-  .display{
-    font-size:clamp(56px,8vw,80px)!important;
-  }
-  .display.small{
-    font-size:clamp(38px,6vw,54px)!important;
-  }
-  .lede{
+  .lede,
+  main section.hero .lede{
     font-size:17px!important;
   }
+
   .card p,
   .concept-card p,
   .axis-card p,
@@ -294,82 +287,57 @@ footer a,
   .sponsor-grid p,
   .growth-path p,
   .timeline-row p{
-    font-size:13px!important;
+    font-size:14px!important;
   }
 }
 
 @media(max-width:700px){
   :root{
-    --type-label:9px;
-    --type-small:10px;
-    --type-body:13px;
-    --type-body-lg:14px;
-    --type-card-title:16px;
+    --type-label:10.5px;
+    --type-small:11.5px;
+    --type-body:14px;
+    --type-card-title:17px;
   }
 
   body{
     font-size:15px!important;
   }
 
-  .display{
-    font-size:clamp(48px,14vw,64px)!important;
-    line-height:.96!important;
-    letter-spacing:-.045em!important;
+  .brand h1{font-size:12px!important}
+  .brand p{font-size:11px!important}
+  .nav a{
+    font-size:13px!important;
+    line-height:1.3!important;
+    padding:8px 10px!important;
   }
-  .display.small{
-    font-size:clamp(34px,9.6vw,44px)!important;
-    line-height:1.03!important;
-    letter-spacing:-.04em!important;
-  }
+  .btn{font-size:11.5px!important}
+  .side-note{font-size:11px!important}
+  .mobile-brand{font-size:12px!important}
+
   .lede,
   main section.hero .lede{
-    font-size:15px!important;
-    line-height:1.58!important;
+    font-size:15.5px!important;
+    line-height:1.62!important;
   }
 
-  main section.hero .arabic-title{
-    font-size:clamp(36px,11vw,48px)!important;
-  }
-  main section.hero .hero-line{
-    font-size:clamp(18px,5.2vw,22px)!important;
-    line-height:1.3!important;
-  }
   main section.hero .chip{
-    font-size:10px!important;
+    font-size:11.5px!important;
     padding:7px 10px!important;
   }
-  main section.hero .hero-panel>strong{
-    font-size:24px!important;
-    line-height:1.15!important;
-  }
   main section.hero .meta-lines div{
-    font-size:10px!important;
+    font-size:11.5px!important;
   }
   main section.hero .meta-lines b{
-    font-size:11px!important;
+    font-size:12.5px!important;
   }
   main section.hero .metric-grid article strong{
-    font-size:13px!important;
+    font-size:13.5px!important;
   }
   main section.hero .metric-grid article p{
-    font-size:11px!important;
+    font-size:12.5px!important;
   }
 
-  .statement-card h3{
-    font-size:30px!important;
-    line-height:1.1!important;
-  }
-  .statement-card p{
-    font-size:13px!important;
-  }
-  .concept-card h3,
-  .timeline-row h3,
-  .guest-card h3{
-    font-size:21px!important;
-  }
-  .callout h3{
-    font-size:24px!important;
-  }
+  .statement-card p,
   .callout p,
   .research-strip p,
   .timeline-row p,
@@ -382,9 +350,10 @@ footer a,
   .production-grid p,
   .sponsor-grid p,
   .growth-path p{
-    font-size:13px!important;
-    line-height:1.62!important;
+    font-size:14px!important;
+    line-height:1.64!important;
   }
+
   .audience-card h3,
   .segment-card h3,
   .card h3,
@@ -392,55 +361,81 @@ footer a,
   .production-grid h3,
   .sponsor-grid h3,
   .growth-path h3{
-    font-size:16px!important;
+    font-size:17px!important;
   }
-  .episode-hero blockquote{
-    font-size:24px!important;
-    line-height:1.18!important;
+
+  .concept-card b,
+  .callout small{
+    font-size:10.5px!important;
   }
-  .time{
-    font-size:22px!important;
+
+  .spectrum-head,
+  .spectrum p{
+    font-size:11px!important;
   }
-  .spectrum-head{
-    font-size:10px!important;
-  }
+
   .research-strip a,
   .guest-card a,
   .source-note,
   .format-note{
-    font-size:10px!important;
+    font-size:11.5px!important;
   }
+
   .study-mobile-context b,
   .study-mobile-context span{
-    font-size:10px!important;
+    font-size:11.5px!important;
   }
   .study-mobile-nav a{
-    font-size:12px!important;
+    font-size:13.5px!important;
+  }
+
+  .budget-cadence span,
+  .budget-run>span,
+  .budget-efficiency span{
+    font-size:10.5px!important;
+  }
+  .budget-cadence small,
+  .budget-run>small,
+  .budget-run-note{
+    font-size:11.5px!important;
+  }
+  .budget-lines span,
+  .budget-launch p,
+  .budget-efficiency p{
+    font-size:13px!important;
+  }
+  .budget-launch li{
+    font-size:12.5px!important;
   }
 }
 
 @media(max-width:420px){
-  .display{
-    font-size:clamp(44px,13.5vw,56px)!important;
-  }
-  .display.small{
-    font-size:clamp(31px,9.2vw,39px)!important;
-  }
-  main section.hero .hero-line{
-    font-size:18px!important;
-  }
   .lede,
   main section.hero .lede{
-    font-size:14px!important;
+    font-size:15px!important;
   }
-  .statement-card h3{
-    font-size:27px!important;
+  .nav a{font-size:12.5px!important}
+  .card p,
+  .concept-card p,
+  .axis-card p,
+  .audience-card p,
+  .guest-card p,
+  .segment-card p,
+  .production-grid p,
+  .sponsor-grid p,
+  .growth-path p,
+  .timeline-row p{
+    font-size:13.5px!important;
   }
 }
 
 @media print{
-  .display{font-size:58px!important}
-  .display.small{font-size:42px!important}
   .lede{font-size:14px!important}
-  .card p,.concept-card p,.axis-card p,.audience-card p,.guest-card p,.segment-card p{font-size:11px!important}
+  .card p,
+  .concept-card p,
+  .axis-card p,
+  .audience-card p,
+  .guest-card p,
+  .segment-card p,
+  .timeline-row p{font-size:11.5px!important}
 }
