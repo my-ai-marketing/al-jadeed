@@ -11,12 +11,21 @@
   const progressBar = document.getElementById('progressBar');
 
   const loadTypographyFix = () => {
-    if (document.querySelector('link[data-typography-fix]')) return;
-    const style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.href = 'typography-fix.css?v=20260822d';
-    style.dataset.typographyFix = 'true';
-    document.head.appendChild(style);
+    if (!document.querySelector('link[data-typography-fix]')) {
+      const style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'typography-fix.css?v=20260822d';
+      style.dataset.typographyFix = 'true';
+      document.head.appendChild(style);
+    }
+
+    if (!document.querySelector('link[data-typography-complete]')) {
+      const style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'typography-complete.css?v=20260822a';
+      style.dataset.typographyComplete = 'true';
+      document.head.appendChild(style);
+    }
   };
 
   loadTypographyFix();
