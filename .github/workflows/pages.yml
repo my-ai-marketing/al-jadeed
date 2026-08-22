@@ -70,13 +70,17 @@ jobs:
               '<link rel="stylesheet" href="study-nav.css?v=20260822-1">',
               '<link rel="stylesheet" href="presentation-fixes.css?v=20260822-1">',
               '<link rel="stylesheet" href="typography-fix.css?v=20260822-1">',
+              '<link rel="stylesheet" href="whatsapp-cta.css?v=20260822-1">',
           ])
-          if 'typography-fix.css?v=20260822-1' not in html:
+          if 'whatsapp-cta.css?v=20260822-1' not in html:
               html = html.replace('</head>', production_css + '\n</head>')
 
-          nav_script = '<script src="study-nav.js?v=20260822-1"></script>'
-          if nav_script not in html:
-              html = html.replace('</body>', nav_script + '\n</body>')
+          scripts = '\n'.join([
+              '<script src="study-nav.js?v=20260822-1"></script>',
+              '<script src="whatsapp-cta.js?v=20260822-1"></script>',
+          ])
+          if 'whatsapp-cta.js?v=20260822-1' not in html:
+              html = html.replace('</body>', scripts + '\n</body>')
 
           path.write_text(html, encoding='utf-8')
           PY
