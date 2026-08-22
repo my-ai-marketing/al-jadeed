@@ -98,7 +98,7 @@ jobs:
               html = html.replace('</head>', production_css + '\n</head>')
 
           scripts = '\n'.join([
-              '<script src="study-nav.js?v=20260822-2"></script>',
+              '<script src="study-nav.js?v=20260822-3"></script>',
               '<script src="whatsapp-cta.js?v=20260822-1"></script>',
           ])
           if 'whatsapp-cta.js?v=20260822-1' not in html:
