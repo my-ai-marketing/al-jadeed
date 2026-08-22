@@ -52,7 +52,7 @@
   mobileDrawer.innerHTML=`
     <div class="study-mobile-drawer-head"><div><div class="section-label" style="margin:0 0 6px">Navigate presentation</div><div class="study-mobile-drawer-title">Choose a section</div></div><button class="study-mobile-close" type="button" aria-label="Close navigation">×</button></div>
     <nav class="study-mobile-nav" aria-label="Mobile section navigation">${items.map(item=>`<a href="${item.href}" data-target="${item.id}">${item.label}</a>`).join('')}</nav>
-    <div class="study-mobile-actions"><button class="btn" type="button" data-study-present>Present</button><button class="btn" type="button" data-study-pdf>Export PDF</button></div>`;
+    <div class="study-mobile-actions"><button class="btn" type="button" data-study-present>Present</button></div>`;
   document.body.appendChild(mobileDrawer);
 
   const mq=window.matchMedia('(min-width:1051px)');
@@ -129,10 +129,6 @@
   mobileDrawer.querySelector('[data-study-present]')?.addEventListener('click',()=>{
     setMobileOpen(false);
     document.getElementById('presentButton')?.click();
-  });
-  mobileDrawer.querySelector('[data-study-pdf]')?.addEventListener('click',()=>{
-    setMobileOpen(false);
-    window.print();
   });
 
   let activeId=items[0]?.id;
