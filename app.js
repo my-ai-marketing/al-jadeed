@@ -9,7 +9,19 @@
   const presentButton = document.getElementById('presentButton');
   const progressBar = document.getElementById('progressBar');
 
-  document.getElementById('printButton')?.remove();
+  const removeExportPdfControls = () => {
+    document.querySelectorAll('#printButton, [data-export-pdf], .export-pdf').forEach(el => el.remove());
+  };
+
+  const exportPdfBlock = document.createElement('style');
+  exportPdfBlock.textContent = '#printButton,[data-export-pdf],.export-pdf{display:none!important}';
+  document.head.appendChild(exportPdfBlock);
+  removeExportPdfControls();
+
+  if ('MutationObserver' in window) {
+    const exportPdfObserver = new MutationObserver(removeExportPdfControls);
+    exportPdfObserver.observe(document.body, { childList: true, subtree: true });
+  }
 
   const loadTypographyFix = () => {
     if (!document.querySelector('link[data-typography-fix]')) {
@@ -46,6 +58,7 @@
   };
 
   menuButton?.addEventListener('click', () => {
+    removeExportPdfControls();
     const open = !sideNav.classList.contains('open');
     sideNav.classList.toggle('open', open);
     menuScrim.classList.toggle('show', open);
