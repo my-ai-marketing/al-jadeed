@@ -1,0 +1,434 @@
+/* Final responsive balance layer: typography + element spacing */
+
+:root{
+  --rb-section-y:74px;
+  --rb-section-x:clamp(28px,5vw,76px);
+  --rb-grid-gap:14px;
+  --rb-card-pad:22px;
+}
+
+body{
+  font-size:15px!important;
+  line-height:1.58!important;
+}
+
+main section{
+  padding:var(--rb-section-y) var(--rb-section-x)!important;
+}
+
+.section-head{max-width:1120px}
+.section-label{margin-bottom:15px!important}
+.top-gap{margin-top:28px!important}
+
+/* Display hierarchy */
+.display{
+  font-size:clamp(56px,6vw,88px)!important;
+  line-height:.96!important;
+  letter-spacing:-.05em!important;
+}
+.display.small{
+  font-size:clamp(37px,4.25vw,58px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.042em!important;
+}
+.lede,
+main section.hero .lede{
+  font-size:clamp(16px,1.25vw,19px)!important;
+  line-height:1.62!important;
+  margin-top:19px!important;
+}
+.eyebrow,.section-label,.kicker,.panel-label,.guest-tag,
+.audience-card>span,.segment-card>b,.timeline-row b,
+.production-grid>article>span,.sponsor-grid>article>span,
+.growth-path>article>span,.research-strip span,
+.episode-badge span,.episode-badge small{
+  font-size:9px!important;
+  line-height:1.4!important;
+}
+
+/* Hero */
+main section.hero{
+  min-height:100vh!important;
+  padding-top:96px!important;
+  padding-bottom:58px!important;
+}
+main section.hero .hero-grid{gap:24px!important}
+main section.hero .arabic-title{
+  font-size:clamp(38px,3.6vw,54px)!important;
+  margin-bottom:5px!important;
+}
+main section.hero .hero-line{
+  font-size:clamp(19px,1.75vw,26px)!important;
+  line-height:1.32!important;
+  margin-top:12px!important;
+}
+main section.hero .chips{
+  gap:7px!important;
+  margin-top:18px!important;
+}
+main section.hero .chip{
+  font-size:10px!important;
+  padding:7px 10px!important;
+}
+main section.hero .hero-panel{
+  padding:22px 24px!important;
+}
+main section.hero .hero-panel>strong{
+  font-size:clamp(26px,2.2vw,32px)!important;
+  line-height:1.12!important;
+  margin:10px auto 20px!important;
+}
+main section.hero .meta-lines div{
+  padding:11px 9px!important;
+  font-size:10px!important;
+}
+main section.hero .meta-lines b{font-size:11px!important}
+main section.hero .metric-grid.four{margin-top:28px!important;gap:11px!important}
+main section.hero .metric-grid article{padding:15px!important}
+main section.hero .metric-grid article span{font-size:20px!important}
+main section.hero .metric-grid article strong{font-size:13px!important;margin-top:9px!important}
+main section.hero .metric-grid article p{font-size:11px!important;line-height:1.5!important}
+main section.hero .credit{margin-top:16px!important;font-size:10px!important}
+
+/* Cards and grids */
+.card,.concept-card,.audience-card,.guest-card,.segment-card,
+.production-grid>article,.sponsor-grid>article,.growth-path>article,
+.host-qualities>article,.flow-outputs>article,.fit-list>article{
+  padding:var(--rb-card-pad)!important;
+}
+.card h3,.axis-card h3,.audience-card h3,.segment-card h3,
+.production-grid h3,.sponsor-grid h3,.growth-path h3,.fit-list h3{
+  font-size:16px!important;
+  line-height:1.32!important;
+  margin-bottom:7px!important;
+}
+.card p,.axis-card p,.audience-card p,.segment-card p,
+.production-grid p,.sponsor-grid p,.growth-path p,.fit-list p,
+.host-qualities p,.flow-outputs p{
+  font-size:12.5px!important;
+  line-height:1.62!important;
+}
+
+.opportunity-layout,.concept-grid,.position-grid,.audience-grid,.guest-grid,
+.segment-grid,.question-grid,.host-grid,.production-grid,.sponsor-grid,
+.growth-path,.fit-layout,.digital-flow,.metric-grid{
+  gap:var(--rb-grid-gap)!important;
+}
+
+/* Large feature elements */
+.statement-card{padding:26px!important;min-height:340px!important}
+.statement-card h3{
+  font-size:clamp(29px,2.8vw,41px)!important;
+  line-height:1.08!important;
+  margin:9px 0 13px!important;
+}
+.statement-card p{font-size:13px!important;line-height:1.64!important}
+.stack{gap:10px!important}
+.stack .card{padding:20px!important;gap:13px!important}
+.stack .card .num,.num{font-size:24px!important}
+
+.concept-card{min-height:190px!important}
+.concept-card h3{
+  font-size:22px!important;
+  line-height:1.14!important;
+  margin-top:28px!important;
+}
+.concept-card p{font-size:12.5px!important;line-height:1.62!important}
+
+.callout{padding:22px 24px!important;margin-top:24px!important}
+.callout h3{
+  font-size:clamp(24px,2.2vw,29px)!important;
+  line-height:1.14!important;
+  margin:8px 0!important;
+}
+.callout p{font-size:12.5px!important;line-height:1.62!important}
+.callout small{font-size:9px!important}
+
+/* Research / positioning */
+.research-strip{
+  margin-top:24px!important;
+  padding:14px 0!important;
+  gap:16px!important;
+}
+.research-strip p{font-size:11.5px!important;line-height:1.56!important}
+.research-strip a{font-size:10px!important}
+.axis-card{padding-top:18px!important}
+.axis-card>span{font-size:23px!important}
+.axis-card h3{margin-top:18px!important}
+.spectrum{padding:20px!important;margin-top:26px!important}
+.spectrum-head{font-size:10px!important}
+.spectrum p{font-size:10px!important}
+
+/* Guests / episode / segments */
+.guest-card{min-height:205px!important}
+.guest-card h3{
+  font-size:21px!important;
+  line-height:1.15!important;
+  margin-top:25px!important;
+}
+.guest-card p{font-size:12.5px!important;line-height:1.6!important}
+.guest-card a,.source-note{font-size:10px!important}
+
+.timeline-row{
+  grid-template-columns:105px 1fr!important;
+  gap:24px!important;
+  padding:20px 0!important;
+}
+.time{font-size:24px!important}
+.timeline-row h3{font-size:21px!important;line-height:1.16!important;margin:6px 0!important}
+.timeline-row p{font-size:12.5px!important;line-height:1.62!important}
+.format-note{font-size:10px!important;margin-top:14px!important}
+
+.segment-card{min-height:195px!important}
+.segment-card>span{font-size:25px!important}
+.segment-card>b{margin:20px 0 7px!important}
+.segment-card h3{font-size:16px!important}
+
+.episode-hero{padding:26px!important;gap:24px!important}
+.episode-hero blockquote{
+  font-size:clamp(25px,2.5vw,35px)!important;
+  line-height:1.14!important;
+}
+.episode-badge strong{font-size:50px!important}
+.question-grid p{font-size:15px!important;line-height:1.45!important}
+
+/* Host / production / commercial */
+.host-role h3{font-size:clamp(27px,2.5vw,34px)!important;line-height:1.1!important}
+.host-role p{font-size:13px!important;line-height:1.64!important}
+.host-qualities p{font-size:12px!important}
+.flow-main strong{font-size:clamp(24px,2.3vw,31px)!important;line-height:1.1!important}
+.flow-outputs b{font-size:12px!important}
+.flow-outputs small{font-size:10px!important}
+.commercial-model strong{font-size:12.5px!important;line-height:1.35!important}
+.commercial-model p,.guardrail p,.fit-score p{font-size:11px!important;line-height:1.55!important}
+
+/* Closing */
+.proposal-box{padding:24px!important;gap:22px!important}
+.proposal-box strong{font-size:clamp(27px,2.5vw,36px)!important;line-height:1.08!important}
+.proposal-box ul{font-size:12px!important;line-height:1.65!important}
+.final-credit{margin-top:24px!important}
+.final-credit strong{font-size:clamp(25px,2.2vw,32px)!important}
+.sources{gap:20px!important;padding-top:22px!important;padding-bottom:22px!important}
+.sources p,.source-links a{font-size:9.5px!important;line-height:1.5!important}
+
+/* Budget chapter */
+.budget-anchor{gap:24px!important;padding:26px!important}
+.budget-price strong{font-size:clamp(48px,5vw,72px)!important}
+.budget-price span{font-size:12px!important}
+.budget-anchor-copy p{font-size:13px!important;line-height:1.64!important}
+.budget-cadence{padding-left:24px!important}
+.budget-cadence strong{font-size:28px!important}
+.budget-run-grid{gap:12px!important}
+.budget-run{padding:21px!important;min-height:175px!important}
+.budget-run>strong{font-size:45px!important;margin-top:22px!important}
+.budget-run>div{font-size:21px!important;margin-top:14px!important}
+.budget-detail-grid{gap:14px!important}
+.budget-breakdown,.budget-launch{padding:23px!important}
+.budget-subhead h3{font-size:25px!important;margin:8px 0 18px!important}
+.budget-lines>div{padding:10px 0!important}
+.budget-efficiency{padding:20px 22px!important;gap:22px!important}
+
+/* Desktop navigation */
+.study-chapter{height:50px!important;min-width:235px!important}
+.study-chapter-index{width:36px!important;height:36px!important;flex-basis:36px!important}
+.study-chapter-copy small{font-size:8px!important}
+.study-chapter-title{font-size:11px!important}
+.study-overlay-head h2{font-size:clamp(34px,3.6vw,52px)!important}
+.study-overlay-head p{font-size:12px!important}
+.study-overlay-grid{gap:9px!important}
+.study-overlay-link{min-height:108px!important;padding:15px!important}
+.study-overlay-link strong{font-size:13px!important}
+
+@media(max-width:1050px){
+  :root{
+    --rb-section-y:58px;
+    --rb-section-x:clamp(22px,4.5vw,44px);
+    --rb-grid-gap:12px;
+    --rb-card-pad:20px;
+  }
+  .display{font-size:clamp(50px,7.3vw,72px)!important}
+  .display.small{font-size:clamp(34px,5.3vw,48px)!important}
+  .lede,main section.hero .lede{font-size:16px!important}
+  main section.hero{
+    min-height:auto!important;
+    padding-top:46px!important;
+    padding-bottom:48px!important;
+  }
+  main section.hero .hero-grid{gap:21px!important}
+  .statement-card{min-height:300px!important}
+  .timeline-row{grid-template-columns:92px 1fr!important;gap:20px!important}
+}
+
+@media(max-width:700px){
+  :root{
+    --rb-section-y:44px;
+    --rb-section-x:18px;
+    --rb-grid-gap:10px;
+    --rb-card-pad:17px;
+  }
+
+  body{font-size:14px!important;line-height:1.6!important}
+  main section{padding:44px 18px!important}
+  .section-label{margin-bottom:11px!important}
+  .top-gap{margin-top:20px!important}
+
+  .display{
+    font-size:clamp(43px,12.4vw,56px)!important;
+    line-height:.98!important;
+    letter-spacing:-.045em!important;
+  }
+  .display.small{
+    font-size:clamp(29px,8.2vw,38px)!important;
+    line-height:1.06!important;
+    letter-spacing:-.035em!important;
+  }
+  .lede,main section.hero .lede{
+    font-size:14.5px!important;
+    line-height:1.62!important;
+    margin-top:15px!important;
+  }
+  .eyebrow,.section-label,.kicker,.panel-label,.guest-tag,
+  .audience-card>span,.segment-card>b,.timeline-row b,
+  .production-grid>article>span,.sponsor-grid>article>span,
+  .growth-path>article>span,.research-strip span{
+    font-size:8.5px!important;
+  }
+
+  main section.hero{
+    padding:32px 18px 40px!important;
+  }
+  main section.hero .hero-grid{gap:18px!important}
+  main section.hero .arabic-title{font-size:clamp(33px,10vw,44px)!important}
+  main section.hero .hero-line{
+    font-size:clamp(17px,4.8vw,20px)!important;
+    line-height:1.32!important;
+    margin-top:9px!important;
+  }
+  main section.hero .chips{gap:6px!important;margin-top:15px!important}
+  main section.hero .chip{font-size:9px!important;padding:6px 8px!important}
+  main section.hero .hero-panel{padding:18px 16px!important}
+  main section.hero .hero-panel>strong{font-size:22px!important;margin-bottom:16px!important}
+  main section.hero .meta-lines div{padding:10px 7px!important;font-size:9.5px!important}
+  main section.hero .meta-lines b{font-size:10.5px!important}
+  main section.hero .metric-grid.four{margin-top:22px!important;gap:8px!important}
+  main section.hero .metric-grid article{padding:13px 10px!important}
+  main section.hero .metric-grid article span{font-size:18px!important}
+  main section.hero .metric-grid article strong{font-size:12px!important;margin-top:7px!important}
+  main section.hero .metric-grid article p{font-size:10.5px!important;line-height:1.45!important}
+
+  .card,.concept-card,.audience-card,.guest-card,.segment-card,
+  .production-grid>article,.sponsor-grid>article,.growth-path>article,
+  .host-qualities>article,.flow-outputs>article,.fit-list>article{
+    border-radius:15px!important;
+  }
+  .card h3,.axis-card h3,.audience-card h3,.segment-card h3,
+  .production-grid h3,.sponsor-grid h3,.growth-path h3,.fit-list h3{
+    font-size:15px!important;
+  }
+  .card p,.axis-card p,.audience-card p,.segment-card p,
+  .production-grid p,.sponsor-grid p,.growth-path p,.fit-list p,
+  .host-qualities p,.flow-outputs p{
+    font-size:12.5px!important;
+    line-height:1.6!important;
+  }
+
+  .statement-card{padding:20px!important;min-height:0!important}
+  .statement-card h3{font-size:27px!important;line-height:1.1!important}
+  .statement-card p{font-size:12.5px!important}
+  .stack .card{padding:17px!important;grid-template-columns:40px 1fr!important;gap:11px!important}
+  .stack .card .num,.num{font-size:21px!important}
+
+  .concept-card{min-height:0!important}
+  .concept-card h3{font-size:20px!important;margin-top:20px!important}
+  .concept-card p{font-size:12.5px!important}
+  .callout{padding:19px 18px!important;margin-top:20px!important}
+  .callout h3{font-size:22px!important;line-height:1.16!important}
+  .callout p{font-size:12.5px!important}
+
+  .research-strip{margin-top:20px!important;padding:12px 0!important;gap:8px!important}
+  .research-strip p{font-size:11.5px!important}
+  .research-strip a{font-size:10px!important}
+  .axis-card{padding-top:15px!important}
+  .axis-card h3{margin-top:14px!important}
+  .spectrum{padding:17px 14px!important;margin-top:21px!important}
+
+  .guest-card{min-height:0!important}
+  .guest-card h3{font-size:19px!important;margin-top:18px!important}
+  .guest-card p{font-size:12.5px!important}
+
+  .timeline-row{
+    grid-template-columns:1fr!important;
+    gap:5px!important;
+    padding:17px 0!important;
+  }
+  .time{font-size:20px!important}
+  .timeline-row h3{font-size:19px!important;margin:4px 0 6px!important}
+  .timeline-row p{font-size:12.5px!important}
+
+  .segment-card{min-height:0!important}
+  .segment-card>span{font-size:22px!important}
+  .segment-card>b{margin:15px 0 6px!important}
+
+  .episode-hero{padding:20px 17px!important;gap:16px!important}
+  .episode-hero blockquote{font-size:22px!important;line-height:1.18!important}
+  .episode-badge strong{font-size:43px!important}
+  .question-grid p{font-size:14px!important}
+
+  .host-role h3{font-size:25px!important}
+  .host-role p{font-size:12.5px!important}
+  .flow-main strong{font-size:23px!important}
+  .proposal-box{padding:19px 17px!important;gap:16px!important}
+  .proposal-box strong{font-size:25px!important}
+  .proposal-box ul{font-size:11.5px!important}
+  .final-credit{margin-top:20px!important}
+
+  .budget-anchor{padding:20px 17px!important;gap:18px!important}
+  .budget-price{margin:8px 0!important}
+  .budget-price strong{font-size:clamp(40px,12vw,52px)!important}
+  .budget-price span{font-size:11px!important}
+  .budget-anchor-copy p{font-size:12.5px!important;line-height:1.6!important}
+  .budget-cadence{padding-top:15px!important;gap:5px!important}
+  .budget-cadence strong{font-size:25px!important}
+  .budget-run{padding:17px!important}
+  .budget-run>strong{font-size:38px!important;margin-top:16px!important}
+  .budget-run>div{font-size:19px!important;margin-top:11px!important}
+  .budget-breakdown,.budget-launch{padding:18px 16px!important}
+  .budget-subhead h3{font-size:22px!important;margin-bottom:14px!important}
+  .budget-lines>div{padding:9px 0!important}
+  .budget-lines span{font-size:10.5px!important}
+  .budget-lines b{font-size:12px!important}
+  .launch-price{font-size:clamp(38px,11vw,50px)!important}
+  .budget-launch p{font-size:11.5px!important}
+  .budget-launch li{font-size:10.5px!important}
+  .budget-efficiency{padding:17px 16px!important;gap:13px!important}
+  .budget-efficiency strong{font-size:18px!important}
+  .budget-efficiency p{font-size:10.5px!important}
+
+  .study-mobile-top{height:60px!important;padding:7px 11px!important}
+  .study-mobile-mark{width:33px!important;height:33px!important;flex-basis:33px!important}
+  .study-mobile-context b,.study-mobile-context span{font-size:9.5px!important}
+  .study-mobile-menu{height:36px!important;min-width:68px!important;font-size:9px!important}
+  .study-mobile-drawer{padding:14px!important}
+  .study-mobile-drawer-title{font-size:22px!important}
+  .study-mobile-nav{gap:6px!important;padding:14px 0!important}
+  .study-mobile-nav a{min-height:47px!important;padding:10px 12px!important;font-size:11.5px!important}
+  .study-mobile-actions .btn{min-height:42px!important}
+}
+
+@media(max-width:420px){
+  main section{padding-left:16px!important;padding-right:16px!important}
+  .display{font-size:clamp(40px,12vw,50px)!important}
+  .display.small{font-size:clamp(28px,8.1vw,35px)!important}
+  .lede,main section.hero .lede{font-size:14px!important}
+  main section.hero{padding-left:16px!important;padding-right:16px!important}
+  main section.hero .meta-lines{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  main section.hero .meta-lines div{border-right:1px solid rgba(242,207,122,.08)!important}
+  main section.hero .meta-lines div:nth-child(2n){border-right:0!important}
+  main section.hero .meta-lines div:nth-child(-n+2){border-bottom:1px solid rgba(242,207,122,.08)!important}
+  .statement-card h3{font-size:25px!important}
+  .episode-hero blockquote{font-size:21px!important}
+}
+
+@media print{
+  main section{padding:30px 34px!important}
+}
