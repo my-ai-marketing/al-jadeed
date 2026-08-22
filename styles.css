@@ -34,12 +34,15 @@ p,li{overflow-wrap:break-word;text-wrap:pretty}
 .arabic-title{
   direction:rtl;
   unicode-bidi:isolate;
-  text-align:left;
+  display:block;
+  width:max-content;
+  max-width:100%;
+  text-align:right;
   font-size:clamp(40px,3.5vw,54px);
   line-height:1.12;
   font-weight:600;
   letter-spacing:0;
-  margin-bottom:8px;
+  margin:0 0 8px;
 }
 .studio-title b{font-weight:600;letter-spacing:0}
 
@@ -243,7 +246,6 @@ p,li{overflow-wrap:break-word;text-wrap:pretty}
   .arabic-title{
     font-size:34px;
     line-height:1.18;
-    text-align:left;
     margin-bottom:6px;
   }
 
