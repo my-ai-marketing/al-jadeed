@@ -1,211 +1,357 @@
 @import url("./styles-base.css");
 
-/* Typography refinement: balanced sizing and font hierarchy for desktop + mobile */
+/* Authoritative typography refinement: desktop + tablet + mobile */
 :root{
   --display:'Roboto Flex','Manrope',Arial,sans-serif;
   --body:'Manrope',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --arabic:'Noto Sans Arabic','Segoe UI',Tahoma,sans-serif;
 }
 
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
 body{
   font-family:var(--body);
   font-size:16px;
   line-height:1.6;
-  letter-spacing:-.008em;
+  letter-spacing:-.006em;
   font-optical-sizing:auto;
+  font-synthesis:none;
 }
-button,input,textarea,select{font-family:var(--body)}
 
-/* Navigation + utility text */
-.brand h1{font-size:12px;letter-spacing:.12em;line-height:1.25}
-.brand p{font-size:10.5px;line-height:1.45}
-.nav a{font-size:11.5px;line-height:1.35;padding:8px 10px}
-.btn{font-size:10.5px;line-height:1.2}
-.side-note{font-size:9.5px;line-height:1.55}
-.mobile-brand{font-size:10.5px}
-.present-exit{font-size:10.5px}
+button,input,textarea,select{font-family:var(--body)}
+p,li{overflow-wrap:break-word;text-wrap:pretty}
+
+/* Arabic */
+.arabic-title,
+.studio-title b,
+[lang="ar"]{
+  font-family:var(--arabic);
+  font-synthesis:none;
+}
+.arabic-title{
+  direction:rtl;
+  unicode-bidi:isolate;
+  text-align:left;
+  font-size:clamp(40px,3.5vw,54px);
+  line-height:1.12;
+  font-weight:600;
+  letter-spacing:0;
+  margin-bottom:8px;
+}
+.studio-title b{font-weight:600;letter-spacing:0}
+
+/* Navigation and utility text */
+.brand h1{font-size:12px;letter-spacing:.11em;line-height:1.25;font-weight:700}
+.brand p{font-size:11px;line-height:1.45}
+.nav a{
+  font-size:12px;
+  line-height:1.35;
+  padding:8px 10px;
+  white-space:normal;
+  overflow-wrap:normal;
+  text-wrap:pretty;
+}
+.btn{font-size:11px;line-height:1.2}
+.side-note{font-size:10px;line-height:1.55}
+.mobile-brand{font-size:11px;line-height:1.2}
+.present-exit{font-size:11px}
 
 /* Primary display hierarchy */
 .display,
 .hero-panel>strong,
 .statement-card h3,
-.concept-card h3,
 .callout h3,
-.guest-card h3,
 .timeline-row h3,
 .episode-hero blockquote,
 .host-role h3,
 .flow-main strong,
-.growth-path h3,
 .proposal-box strong,
 .final-credit strong{
   font-family:var(--display);
-  font-stretch:112%;
-  letter-spacing:-.035em;
-}
-.display{
-  font-size:clamp(60px,6.2vw,92px);
-  line-height:.94;
-  font-weight:610;
-}
-.display.small{
-  font-size:clamp(38px,4.25vw,60px);
-  line-height:1.01;
-  letter-spacing:-.04em;
-  max-width:1120px;
-}
-.arabic-title{
-  font-size:clamp(39px,3.8vw,56px);
-  line-height:1.05;
-}
-.hero-line{
-  font-family:var(--display);
-  font-stretch:108%;
-  font-size:clamp(20px,1.8vw,28px);
-  line-height:1.28;
-  letter-spacing:-.025em;
-}
-.lede{
-  font-size:clamp(16px,1.18vw,19px);
-  line-height:1.62;
-  letter-spacing:-.006em;
-  max-width:980px;
+  font-stretch:100%;
+  font-variation-settings:'wdth' 104;
+  letter-spacing:-.028em;
 }
 
-/* Labels, metadata, small UI copy */
+.display{
+  font-size:clamp(58px,5.9vw,88px);
+  line-height:.96;
+  font-weight:650;
+  text-wrap:balance;
+}
+
+.display.small{
+  font-size:clamp(38px,3.85vw,56px);
+  line-height:1.06;
+  letter-spacing:-.026em;
+  max-width:23ch;
+  text-wrap:balance;
+}
+
+.hero-line{
+  font-family:var(--display);
+  font-stretch:100%;
+  font-variation-settings:'wdth' 102;
+  font-size:clamp(20px,1.7vw,27px);
+  line-height:1.32;
+  letter-spacing:-.018em;
+  text-wrap:balance;
+  max-width:31ch;
+}
+
+.lede{
+  font-size:clamp(16px,1.1vw,18px);
+  line-height:1.66;
+  letter-spacing:-.004em;
+  max-width:68ch;
+  text-wrap:pretty;
+}
+
+/* Labels and metadata: one consistent tier */
 .eyebrow,.section-label,.kicker,
 .panel-label,.research-strip span,.concept-card b,.audience-card>span,
 .guest-tag,.timeline-row b,.segment-card>b,.question-grid span,
 .host-qualities b,.production-grid span,.flow-main span,
 .commercial-model span,.fit-score span,.growth-path span,
 .proposal-box span,.final-credit span,.final-credit small{
-  font-size:10.5px;
+  font-family:var(--body);
+  font-size:11px;
   line-height:1.35;
-  letter-spacing:.13em;
+  letter-spacing:.095em;
+  font-weight:700;
+  overflow-wrap:normal;
+  text-wrap:pretty;
 }
-.chip{font-size:11px;line-height:1.3;padding:7px 11px}
-.credit{font-size:10.5px;line-height:1.5}
-.meta-lines div{font-size:11.5px;line-height:1.45;padding:12px 0}
-.hero-panel>strong{font-size:clamp(28px,2.2vw,34px);line-height:1.08;font-weight:600}
 
-/* Cards and section copy */
+.chip{font-size:11px;line-height:1.35;padding:7px 11px;white-space:normal}
+.credit{font-size:11px;line-height:1.5}
+.meta-lines div{font-size:12px;line-height:1.45;padding:12px 0}
+.hero-panel>strong{font-size:clamp(27px,2vw,33px);line-height:1.1;font-weight:620;text-wrap:balance}
+
+/* Consistent card title family */
 .card h3,.concept-card h3,.axis-card h3,.audience-card h3,
 .guest-card h3,.segment-card h3,.production-grid h3,
 .sponsor-grid h3,.growth-path h3,.fit-list h3{
+  font-family:var(--body);
+  font-stretch:normal;
+  font-variation-settings:normal;
   font-size:17px;
-  line-height:1.28;
+  line-height:1.32;
+  letter-spacing:-.012em;
+  font-weight:650;
+  text-wrap:balance;
 }
+
 .card p,.concept-card p,.axis-card p,.audience-card p,.guest-card p,
 .segment-card p,.production-grid p,.sponsor-grid p,.growth-path p,
 .fit-list p{
   font-size:13.5px;
-  line-height:1.68;
+  line-height:1.58;
+  letter-spacing:-.003em;
 }
+
 .metric-grid article span{font-size:21px}
 .metric-grid article strong{font-size:13.5px;line-height:1.35}
-.metric-grid article p{font-size:12px;line-height:1.55}
-.statement-card h3{font-size:clamp(32px,3.1vw,46px);line-height:1.06}
-.statement-card p{font-size:14px;line-height:1.7}
-.research-strip p{font-size:12px;line-height:1.65}
-.research-strip a{font-size:11px}
-.concept-card h3{font-size:25px;line-height:1.18}
-.callout h3{font-size:30px;line-height:1.12}
-.callout p{font-size:13.5px;line-height:1.68}
+.metric-grid article p{font-size:12px;line-height:1.5}
+
+.statement-card h3{font-size:clamp(31px,2.8vw,44px);line-height:1.1;text-wrap:balance}
+.statement-card p{font-size:14px;line-height:1.62;max-width:55ch}
+.research-strip p{font-size:12.5px;line-height:1.58}
+.research-strip a{font-size:11.5px;white-space:normal;text-wrap:balance}
+
+.concept-card h3{font-size:18px;line-height:1.3}
+.callout h3{font-size:clamp(26px,2.2vw,30px);line-height:1.16;text-wrap:balance}
+.callout p{font-size:13.5px;line-height:1.58}
 .axis-card>span{font-size:27px}
-.spectrum-head{font-size:10.5px}
-.spectrum p{font-size:11px;line-height:1.5}
+
+.spectrum-head{
+  font-size:11px;
+  line-height:1.35;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  gap:16px;
+}
+.spectrum-head span:first-child{text-align:left}
+.spectrum-head span:last-child{text-align:right}
+.spectrum-head span{white-space:normal;text-wrap:balance}
+.spectrum-head b{white-space:nowrap}
+.spectrum p{font-size:11.5px;line-height:1.5}
+
 .audience-card h3{font-size:17px}
-.guest-card h3{font-size:24px;line-height:1.18}
-.guest-card a,.source-note{font-size:11px;line-height:1.5}
-.timeline-row p{font-size:13.5px;line-height:1.68}
+.guest-card h3{font-size:19px;line-height:1.28}
+.guest-card a,.source-note{font-size:11.5px;line-height:1.5}
+
+.timeline-row p{font-size:13.5px;line-height:1.58}
+.timeline-row h3{font-size:clamp(22px,2vw,27px);line-height:1.18;text-wrap:balance}
 .format-note{font-size:11.5px;line-height:1.6}
+
 .segment-card>span{font-size:28px}
 .segment-card h3{font-size:17px}
-.episode-badge span,.episode-badge small{font-size:10.5px}
-.question-grid p{font-size:19px;line-height:1.38}
-.evidence-note{font-size:11.5px;line-height:1.65}
-.host-role p{font-size:14px;line-height:1.7}
+.episode-hero blockquote{text-wrap:balance;line-height:1.16}
+.episode-badge span,.episode-badge small{font-size:11px}
+.question-grid p{font-size:18px;line-height:1.42;text-wrap:pretty}
+.evidence-note{font-size:11.5px;line-height:1.6}
+
+.host-role h3{font-size:clamp(31px,2.8vw,39px);line-height:1.08;text-wrap:balance}
+.host-role p{font-size:14px;line-height:1.62}
 .host-signature{font-size:11.5px;line-height:1.55}
-.host-qualities p{font-size:13px;line-height:1.65}
+.host-qualities p{font-size:13px;line-height:1.58}
+
 .studio-title span{font-size:11px}
-.camera-frame{font-size:9px}
-.flow-main small{font-size:10.5px}
-.flow-outputs b{font-size:13px}
-.flow-outputs small{font-size:10.5px;line-height:1.45}
-.commercial-model strong{font-size:13.5px}
-.commercial-model p{font-size:11.5px;line-height:1.6}
+.camera-frame{font-size:9.5px}
+.flow-main small{font-size:11px}
+.flow-outputs b{font-size:13px;line-height:1.35}
+.flow-outputs small{font-size:11px;line-height:1.45}
+
+.commercial-model strong{font-size:13.5px;line-height:1.35;text-wrap:balance}
+.commercial-model p{font-size:11.5px;line-height:1.55}
 .guardrail b{font-size:11.5px}
-.guardrail p{font-size:11.5px;line-height:1.6}
-.fit-score p{font-size:11.5px;line-height:1.6}
-.proposal-box ul{font-size:12.5px;line-height:1.8}
+.guardrail p{font-size:11.5px;line-height:1.55}
+.fit-score p{font-size:11.5px;line-height:1.55}
+.proposal-box strong{text-wrap:balance}
+.proposal-box ul{font-size:13px;line-height:1.72}
 .sources b{font-size:11px}
-.sources p{font-size:10.5px;line-height:1.65}
-.source-links a{font-size:10px}
+.sources p{font-size:11px;line-height:1.58}
+.source-links a{font-size:10.5px;line-height:1.35;white-space:normal}
+
+/* Protect long strings and narrow cards without shrinking text */
+.card,.concept-card,.audience-card,.guest-card,.segment-card,
+.sponsor-grid article,.growth-path article,.host-qualities article,
+.flow-outputs article,.commercial-model>div,.fit-list article{
+  min-width:0;
+}
 
 /* Tablet */
 @media(max-width:1050px){
-  .display{font-size:clamp(56px,8vw,82px)}
-  .display.small{font-size:clamp(36px,5.6vw,54px)}
-  .lede{font-size:16.5px}
+  .display{font-size:clamp(54px,7.4vw,78px)}
+  .display.small{font-size:clamp(36px,5vw,51px);max-width:22ch}
+  .lede{font-size:16.5px;max-width:64ch}
+  .nav a{font-size:11.5px}
 }
 
 /* Mobile */
 @media(max-width:760px){
   body{font-size:15px;line-height:1.6}
-  .mobile-brand{font-size:10.5px}
-  .nav a{font-size:13px;line-height:1.35;padding:10px 11px}
+  .mobile-brand{font-size:11px}
+  .nav a{font-size:13px;line-height:1.35;padding:10px 11px;white-space:normal}
   .side-note{font-size:10px}
-  .display{font-size:clamp(46px,13vw,62px);line-height:.96;letter-spacing:-.045em}
-  .display.small{font-size:clamp(30px,8.7vw,40px);line-height:1.04;letter-spacing:-.035em}
-  .arabic-title{font-size:34px}
-  .hero-line{font-size:20px;line-height:1.35}
-  .lede{font-size:15.5px;line-height:1.65;margin-top:20px}
+
+  .arabic-title{
+    font-size:34px;
+    line-height:1.18;
+    text-align:left;
+    margin-bottom:6px;
+  }
+
+  .display{
+    font-size:clamp(44px,12vw,58px);
+    line-height:.99;
+    letter-spacing:-.026em;
+    font-variation-settings:'wdth' 100;
+  }
+
+  .display.small{
+    font-size:clamp(29px,7.8vw,37px);
+    line-height:1.1;
+    letter-spacing:-.02em;
+    max-width:100%;
+  }
+
+  .hero-line{font-size:20px;line-height:1.38;max-width:29ch}
+  .lede{font-size:15.5px;line-height:1.64;margin-top:20px;max-width:100%}
+
   .eyebrow,.section-label,.kicker,
   .panel-label,.research-strip span,.concept-card b,.audience-card>span,
   .guest-tag,.timeline-row b,.segment-card>b,.question-grid span,
   .host-qualities b,.production-grid span,.flow-main span,
   .commercial-model span,.fit-score span,.growth-path span,
-  .proposal-box span,.final-credit span,.final-credit small{font-size:10px}
+  .proposal-box span,.final-credit span,.final-credit small{
+    font-size:10.5px;
+    letter-spacing:.08em;
+  }
+
   .chip{font-size:10.5px;padding:7px 9px}
-  .hero-panel>strong{font-size:26px}
-  .meta-lines div{font-size:11.5px}
+  .hero-panel>strong{font-size:26px;line-height:1.12}
+  .meta-lines div{font-size:12px}
   .metric-grid article strong{font-size:13px}
-  .metric-grid article p{font-size:11.5px}
-  .metric-grid.three article strong{font-size:11px}
-  .metric-grid.three article p{font-size:10.5px}
-  .card h3,.axis-card h3,.audience-card h3,.segment-card h3,
-  .production-grid h3,.sponsor-grid h3,.fit-list h3{font-size:16px}
+  .metric-grid article p{font-size:11.5px;line-height:1.48}
+
+  /* Keep compact metrics readable instead of forcing tiny copy */
+  .metric-grid.three{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+  .metric-grid.three article{padding:14px 11px}
+  .metric-grid.three article span{font-size:19px}
+  .metric-grid.three article strong{font-size:12px}
+  .metric-grid.three article p{font-size:11px}
+
+  .card h3,.concept-card h3,.axis-card h3,.audience-card h3,.guest-card h3,
+  .segment-card h3,.production-grid h3,.sponsor-grid h3,.growth-path h3,.fit-list h3{
+    font-size:16px;
+    line-height:1.32;
+  }
+
   .card p,.concept-card p,.axis-card p,.audience-card p,.guest-card p,
-  .segment-card p,.production-grid p,.sponsor-grid p,.growth-path p,.fit-list p{font-size:13.5px}
-  .statement-card h3{font-size:31px;line-height:1.08}
-  .statement-card p{font-size:13.5px}
-  .research-strip p{font-size:12px}
-  .research-strip a{font-size:11px}
-  .concept-card h3{font-size:23px}
-  .callout h3{font-size:26px}
+  .segment-card p,.production-grid p,.sponsor-grid p,.growth-path p,.fit-list p{
+    font-size:13.5px;
+    line-height:1.58;
+  }
+
+  .statement-card h3{font-size:30px;line-height:1.12}
+  .statement-card p{font-size:13.5px;line-height:1.6}
+  .research-strip p{font-size:12.5px}
+  .research-strip a{font-size:11.5px}
+  .callout h3{font-size:25px;line-height:1.18}
   .callout p{font-size:13.5px}
-  .spectrum-head{font-size:9.5px}
-  .timeline-row h3{font-size:20px;line-height:1.2}
-  .timeline-row p{font-size:13px}
-  .format-note{font-size:11px}
-  .question-grid p{font-size:17px}
-  .evidence-note{font-size:11px}
-  .host-role h3{font-size:30px}
-  .host-role p{font-size:13.5px}
+
+  .spectrum{padding:20px 16px}
+  .spectrum-head{
+    grid-template-columns:1fr;
+    gap:6px;
+    font-size:10px;
+    text-align:center;
+  }
+  .spectrum-head span:first-child,
+  .spectrum-head span:last-child{text-align:center}
+  .spectrum-head b{order:-1}
+
+  .timeline-row{
+    grid-template-columns:1fr;
+    gap:7px;
+    padding:20px 0;
+  }
+  .time{font-size:21px;line-height:1}
+  .timeline-row h3{font-size:20px;line-height:1.22;margin-top:7px}
+  .timeline-row p{font-size:13px;line-height:1.58}
+  .format-note{font-size:11.5px}
+
+  .episode-hero blockquote{font-size:clamp(23px,7vw,31px);line-height:1.2}
+  .question-grid p{font-size:17px;line-height:1.44}
+  .evidence-note{font-size:11.5px}
+
+  .host-role h3{font-size:29px;line-height:1.12}
+  .host-role p{font-size:13.5px;line-height:1.6}
   .host-signature{font-size:11px}
-  .host-qualities p{font-size:12.5px}
+  .host-qualities p{font-size:12.5px;line-height:1.56}
+
   .flow-outputs b{font-size:12.5px}
-  .flow-outputs small{font-size:10px}
+  .flow-outputs small{font-size:10.5px}
   .commercial-model p,.guardrail p,.fit-score p{font-size:11.5px}
-  .proposal-box ul{font-size:12.5px;line-height:1.75}
+  .proposal-box ul{font-size:12.5px;line-height:1.7}
   .sources b{font-size:11px}
   .sources p{font-size:10.5px}
-  .source-links a{font-size:10px}
+  .source-links a{font-size:10.5px}
 }
 
 @media(max-width:410px){
-  .display{font-size:clamp(44px,13.2vw,56px)}
-  .display.small{font-size:clamp(29px,8.5vw,37px)}
+  .display{font-size:clamp(42px,12vw,53px)}
+  .display.small{font-size:clamp(28px,7.7vw,35px)}
   .metric-grid.four article p{font-size:11px}
   .question-grid p{font-size:16.5px}
+  .eyebrow{letter-spacing:.065em}
 }
