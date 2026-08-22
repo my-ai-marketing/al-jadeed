@@ -96,6 +96,16 @@
     if (event.key === 'Escape' && body.classList.contains('present-mode')) setPresentMode(false);
   });
 
+  const loadTitleTypography = () => {
+    if (!document.querySelector('link[data-title-font-match]')) {
+      const style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'title-font-match.css?v=20260822a';
+      style.dataset.titleFontMatch = 'true';
+      document.head.appendChild(style);
+    }
+  };
+
   const loadWhatsAppCTA = () => {
     if (!document.querySelector('link[data-whatsapp-cta]')) {
       const style = document.createElement('link');
@@ -115,5 +125,6 @@
 
   updateActive();
   updateProgress();
+  loadTitleTypography();
   loadWhatsAppCTA();
 })();
