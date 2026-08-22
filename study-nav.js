@@ -98,7 +98,12 @@
   overlayLinks.forEach(link=>link.addEventListener('click',e=>{e.preventDefault();jumpTo(link.dataset.target)}));
   mobileMenu.addEventListener('click',()=>setMobileOpen(true));
   mobileClose?.addEventListener('click',()=>setMobileOpen(false));
-  mobileLinks.forEach(link=>link.addEventListener('click',e=>{e.preventDefault();jumpTo(link.dataset.target)}));
+
+  /* Mobile uses the browser's native hash navigation for maximum reliability on iOS/Android.
+     Close the fixed drawer synchronously, then allow the anchor's default action to scroll. */
+  mobileLinks.forEach(link=>link.addEventListener('click',()=>{
+    setMobileOpen(false);
+  }));
 
   mobileDrawer.querySelector('[data-study-present]')?.addEventListener('click',()=>{
     setMobileOpen(false);
