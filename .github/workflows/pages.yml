@@ -34,8 +34,37 @@ jobs:
           path = Path('index.html')
           html = path.read_text(encoding='utf-8')
 
+          # Keep the presenter's name only once, as the concept-preparation credit.
+          replacements = [
+              ('A premium TV program concept for Al Jadeed, presented and prepared by Elissa Fahd.',
+               'A premium TV program concept presentation for Al Jadeed.'),
+              ('10 / Why Elissa Fahd', '10 / Host profile'),
+              ('10 / Why Elissa', '10 / Host profile'),
+              ('<p class="side-note">Presented &amp; Prepared by Elissa Fahd<br>Research snapshot · 22 Aug 2026</p>',
+               '<p class="side-note">Program concept presentation<br>Research snapshot · 22 Aug 2026</p>'),
+              ('A premium weekly interview format where Elissa Fahd meets the founders, investors, executives and business families behind the decisions, risks and turning points that shaped their success.',
+               'A premium weekly interview format built around conversations with founders, investors, executives and business families, uncovering the decisions, risks and turning points that shaped their success.'),
+              ('<div><span>Host</span><b>Elissa Fahd</b></div>',
+               '<div><span>Interview style</span><b>Host-led</b></div>'),
+              ('<div class="credit reveal">Presented &amp; Prepared by <b>Elissa Fahd</b></div>', ''),
+              ('Elissa’s on-screen role', 'The on-screen role'),
+              ('The pitch presents the host role and the on-screen standard the format is designed to build around Elissa.',
+               'The pitch presents the host role and the on-screen standard the format is designed to achieve.'),
+              ('<div class="final-credit"><span>Presented &amp; Prepared by</span><strong>Elissa Fahd</strong><small>Program concept presentation · Al Jadeed · August 2026</small></div>',
+               '<div class="final-credit"><span>Concept prepared by</span><strong>Elissa Fahd</strong><small>Program concept presentation · Al Jadeed · August 2026</small></div>'),
+          ]
+          for old, new in replacements:
+              html = html.replace(old, new)
+
           # Remove em dashes from all visible source copy in the deployed site.
           html = re.sub(r'\s*—\s*', ', ', html)
+
+          # Safety check: the deployed HTML must contain the presenter's name only in the final credit.
+          if html.count('Elissa Fahd') != 1 or html.count('Elissa') != 1 or html.count('Fahd') != 1:
+              raise SystemExit(
+                  f'Unexpected presenter-name references: full={html.count("Elissa Fahd")}, '
+                  f'first={html.count("Elissa")}, last={html.count("Fahd")}'
+              )
 
           production_css = '\n'.join([
               '<link rel="stylesheet" href="study-nav.css?v=20260822-1">',
