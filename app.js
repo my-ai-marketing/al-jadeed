@@ -9,19 +9,15 @@
   const presentButton = document.getElementById('presentButton');
   const progressBar = document.getElementById('progressBar');
 
-  const removeExportPdfControls = () => {
-    document.querySelectorAll('#printButton, [data-export-pdf], .export-pdf').forEach(el => el.remove());
+  const removeExportPDF = () => {
+    document.getElementById('printButton')?.remove();
+    document.querySelectorAll('[data-study-pdf]').forEach(el => el.remove());
   };
 
-  const exportPdfBlock = document.createElement('style');
-  exportPdfBlock.textContent = '#printButton,[data-export-pdf],.export-pdf{display:none!important}';
-  document.head.appendChild(exportPdfBlock);
-  removeExportPdfControls();
+  removeExportPDF();
 
-  if ('MutationObserver' in window) {
-    const exportPdfObserver = new MutationObserver(removeExportPdfControls);
-    exportPdfObserver.observe(document.body, { childList: true, subtree: true });
-  }
+  const pdfCleanupObserver = new MutationObserver(() => removeExportPDF());
+  pdfCleanupObserver.observe(document.documentElement, { childList: true, subtree: true });
 
   const loadTypographyFix = () => {
     if (!document.querySelector('link[data-typography-fix]')) {
@@ -58,7 +54,7 @@
   };
 
   menuButton?.addEventListener('click', () => {
-    removeExportPdfControls();
+    removeExportPDF();
     const open = !sideNav.classList.contains('open');
     sideNav.classList.toggle('open', open);
     menuScrim.classList.toggle('show', open);
