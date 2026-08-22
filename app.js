@@ -100,14 +100,14 @@
     if (!document.querySelector('link[data-whatsapp-cta]')) {
       const style = document.createElement('link');
       style.rel = 'stylesheet';
-      style.href = 'whatsapp-cta.css?v=20260822b';
+      style.href = 'whatsapp-cta.css?v=20260822c';
       style.dataset.whatsappCta = 'true';
       document.head.appendChild(style);
     }
 
     if (!document.querySelector('script[data-whatsapp-cta]')) {
       const script = document.createElement('script');
-      script.src = 'whatsapp-cta.js?v=20260822b';
+      script.src = 'whatsapp-cta.js?v=20260822c';
       script.dataset.whatsappCta = 'true';
       document.body.appendChild(script);
     }
