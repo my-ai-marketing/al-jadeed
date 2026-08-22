@@ -26,6 +26,14 @@
       style.dataset.typographyComplete = 'true';
       document.head.appendChild(style);
     }
+
+    if (!document.querySelector('link[data-commercial-theme]')) {
+      const style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'commercial-theme.css?v=20260822a';
+      style.dataset.commercialTheme = 'true';
+      document.head.appendChild(style);
+    }
   };
 
   loadTypographyFix();
