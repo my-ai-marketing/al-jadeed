@@ -1,4 +1,5 @@
 @import url("./styles-base.css");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@500;600;700&family=Roboto+Flex:opsz,wdth,wght@8..144,75..150,300..800&display=swap");
 
 /* Typography aligned to the feasibility-study presentation */
 :root{
