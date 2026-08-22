@@ -1,0 +1,294 @@
+/* Authoritative typography system for The Builders presentation.
+   This file is loaded last and owns production font family, size, weight and line-height. */
+
+:root{
+  --font-body:'Manrope',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Roboto Flex','Arial Narrow',Arial,sans-serif;
+  --font-arabic:'Noto Sans Arabic','Segoe UI',Tahoma,Arial,sans-serif;
+  --fs-label:10px;
+  --fs-support:11px;
+  --fs-body:13.5px;
+  --fs-body-lg:16px;
+  --fs-card-title:17px;
+}
+
+html,body{
+  font-family:var(--font-body)!important;
+  font-size:16px!important;
+  line-height:1.55!important;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+body{letter-spacing:-.01em!important}
+button,input,textarea,select{font-family:var(--font-body)!important}
+p,li,a,small,label{font-family:inherit}
+h2,h3,h4,h5,h6{font-family:var(--font-body);letter-spacing:-.018em}
+
+/* Display family */
+.display,
+.hero-line,
+.hero-panel>strong,
+.statement-card h3,
+.concept-card h3,
+.callout h3,
+.guest-card h3,
+.timeline-row h3,
+.time,
+.episode-hero blockquote,
+.episode-badge strong,
+.host-role h3,
+.studio-title span,
+.flow-main strong,
+.fit-score strong,
+.proposal-box strong,
+.final-credit strong,
+.num,
+.axis-card>span,
+.segment-card>span,
+.budget-price strong,
+.budget-cadence strong,
+.budget-run>strong,
+.budget-run>div,
+.budget-subhead h3,
+.budget-lines b,
+.launch-price,
+.budget-efficiency strong,
+.study-overlay-head h2,
+.study-overlay-link .num{
+  font-family:var(--font-display)!important;
+}
+
+/* Arabic family */
+.arabic-title,
+.studio-title b,
+.mark,
+.mini-mark{
+  font-family:var(--font-arabic)!important;
+  font-stretch:normal!important;
+  letter-spacing:0!important;
+}
+
+/* Main hierarchy */
+.display{
+  font-size:clamp(54px,5.7vw,80px)!important;
+  line-height:.97!important;
+  letter-spacing:-.047em!important;
+  font-weight:540!important;
+}
+.display.small{
+  font-size:clamp(36px,3.9vw,52px)!important;
+  line-height:1.04!important;
+  letter-spacing:-.038em!important;
+  font-weight:520!important;
+  max-width:1120px!important;
+}
+.lede{
+  font-family:var(--font-body)!important;
+  font-size:clamp(16px,1.2vw,18.5px)!important;
+  line-height:1.62!important;
+  letter-spacing:-.012em!important;
+}
+.section-head .lede{max-width:960px!important}
+
+/* Labels and utility copy */
+.eyebrow,.section-label,.kicker,.panel-label,.guest-tag,
+.audience-card>span,.segment-card>b,.timeline-row b,.production-grid>article>span,
+.sponsor-grid>article>span,.growth-path>article>span,.research-strip span,
+.episode-badge span,.episode-badge small,.question-grid span,.host-qualities b,
+.flow-main span,.flow-main small,.flow-outputs span,.flow-outputs small,
+.commercial-model span,.fit-score span,.proposal-box span,.final-credit span,.final-credit small,
+.budget-cadence span,.budget-run>span,.budget-efficiency span{
+  font-size:var(--fs-label)!important;
+  line-height:1.4!important;
+  letter-spacing:.14em!important;
+}
+
+/* Hero */
+main section.hero .arabic-title{
+  font-size:clamp(40px,3.7vw,52px)!important;
+  line-height:1.16!important;
+  font-weight:600!important;
+}
+main section.hero .hero-line{
+  font-size:clamp(20px,1.75vw,26px)!important;
+  line-height:1.3!important;
+  font-weight:500!important;
+}
+main section.hero .lede{font-size:clamp(16px,1.25vw,18.5px)!important}
+main section.hero .chip{font-size:11px!important;line-height:1.3!important;padding:8px 12px!important}
+main section.hero .hero-panel>strong{font-size:clamp(25px,2vw,30px)!important;line-height:1.15!important}
+main section.hero .meta-lines div{font-size:11px!important;line-height:1.42!important}
+main section.hero .meta-lines b{font-size:12px!important}
+main section.hero .metric-grid article span{font-family:var(--font-display)!important;font-size:21px!important}
+main section.hero .metric-grid article strong{font-size:14px!important;line-height:1.3!important}
+main section.hero .metric-grid article p{font-size:12.5px!important;line-height:1.58!important}
+main section.hero .credit{font-size:11px!important;line-height:1.5!important}
+
+/* Standard cards */
+.card h3,.axis-card h3,.audience-card h3,.segment-card h3,.production-grid h3,.sponsor-grid h3,.growth-path h3,.fit-list h3{
+  font-family:var(--font-body)!important;
+  font-size:var(--fs-card-title)!important;
+  line-height:1.32!important;
+  font-weight:650!important;
+}
+.card p,.concept-card p,.axis-card p,.audience-card p,.guest-card p,.segment-card p,
+.production-grid p,.sponsor-grid p,.growth-path p,.timeline-row p,.fit-list p{
+  font-family:var(--font-body)!important;
+  font-size:var(--fs-body)!important;
+  line-height:1.66!important;
+}
+
+/* Feature statements */
+.statement-card h3{font-size:clamp(30px,2.7vw,40px)!important;line-height:1.09!important;font-weight:540!important}
+.statement-card p{font-size:14px!important;line-height:1.68!important}
+.concept-card h3{font-size:22px!important;line-height:1.17!important;font-weight:540!important}
+.concept-card b{font-family:var(--font-body)!important;font-size:10px!important}
+.callout h3{font-size:clamp(24px,2.15vw,29px)!important;line-height:1.17!important;font-weight:540!important}
+.callout p{font-size:13.5px!important;line-height:1.65!important}
+.callout small{font-family:var(--font-body)!important;font-size:10px!important}
+.num{font-size:25px!important}
+.axis-card>span{font-size:24px!important}
+.segment-card>span{font-size:26px!important}
+.audience-card h3{font-size:18px!important}
+.guest-card h3{font-size:22px!important;line-height:1.15!important;font-weight:540!important}
+.guest-card a,.source-note{font-size:11px!important;line-height:1.5!important}
+
+/* Supporting sections */
+.research-strip p{font-size:12px!important;line-height:1.62!important}
+.research-strip a{font-size:11px!important}
+.spectrum-head,.spectrum p{font-size:11px!important;line-height:1.5!important}
+.time{font-size:25px!important}
+.timeline-row h3{font-size:22px!important;line-height:1.19!important;font-weight:540!important}
+.timeline-row p{font-size:13.5px!important;line-height:1.65!important}
+.format-note{font-size:11px!important;line-height:1.6!important}
+.episode-hero blockquote{font-size:clamp(25px,2.4vw,34px)!important;line-height:1.17!important}
+.episode-badge strong{font-size:50px!important}
+.question-grid p{font-size:13.5px!important;line-height:1.6!important}
+.host-role h3{font-size:clamp(30px,3vw,40px)!important;line-height:1.09!important;font-weight:540!important}
+.host-role p,.host-qualities p{font-size:13.5px!important;line-height:1.66!important}
+.production-grid h3{font-size:17px!important}
+.flow-main strong{font-size:29px!important;line-height:1.1!important}
+.flow-outputs b{font-size:13.5px!important}
+.metric-grid article strong{font-size:14px!important}
+.metric-grid article p{font-size:12.5px!important;line-height:1.58!important}
+.commercial-model strong{font-size:16px!important;line-height:1.32!important}
+.commercial-model p{font-size:12.5px!important;line-height:1.62!important}
+.guardrail b{font-size:13px!important}
+.guardrail p{font-size:12.5px!important;line-height:1.64!important}
+.fit-score strong{font-size:clamp(29px,3.1vw,41px)!important;line-height:1.05!important}
+.fit-score p{font-size:13.5px!important;line-height:1.64!important}
+.proposal-box strong{font-size:23px!important;line-height:1.16!important}
+.proposal-box li{font-size:13.5px!important;line-height:1.62!important}
+.final-credit strong{font-size:25px!important;line-height:1.1!important}
+.sources,.sources p,.sources a{font-size:11px!important;line-height:1.62!important}
+
+/* Budget */
+.budget-price strong{font-size:clamp(52px,5vw,70px)!important;line-height:.95!important;font-weight:560!important}
+.budget-price span{font-size:13px!important}
+.budget-anchor-copy p{font-size:14px!important;line-height:1.66!important}
+.budget-cadence strong{font-size:27px!important;line-height:1.06!important}
+.budget-cadence small{font-size:11px!important;line-height:1.45!important}
+.budget-run>strong{font-size:42px!important;line-height:.98!important}
+.budget-run>b{font-family:var(--font-body)!important;font-size:12px!important}
+.budget-run>div{font-size:21px!important}
+.budget-run>small,.budget-run-note{font-size:11px!important;line-height:1.52!important}
+.budget-subhead h3{font-size:25px!important;line-height:1.16!important}
+.budget-lines span{font-size:12px!important;line-height:1.48!important}
+.budget-lines b{font-size:14px!important}
+.launch-price{font-size:clamp(40px,3.8vw,55px)!important;line-height:1!important}
+.budget-launch p{font-size:12.5px!important;line-height:1.66!important}
+.budget-launch li{font-size:12px!important;line-height:1.58!important}
+.budget-efficiency strong{font-size:18px!important;line-height:1.28!important}
+.budget-efficiency p{font-size:12.5px!important;line-height:1.66!important}
+
+/* Navigation and CTA */
+.btn{font-family:var(--font-body)!important;font-size:10.5px!important}
+.study-chapter-copy small{font-size:9.5px!important}
+.study-chapter-title{font-size:12.5px!important}
+.study-overlay-kicker{font-size:10px!important}
+.study-overlay-head h2{font-size:clamp(33px,3.3vw,47px)!important;line-height:1.04!important}
+.study-overlay-head p{font-size:13.5px!important;line-height:1.62!important}
+.study-overlay-link .num{font-size:16px!important}
+.study-overlay-link strong{font-family:var(--font-body)!important;font-size:14px!important;line-height:1.35!important}
+.study-overlay-link span:last-child,.study-rail-dot:after{font-size:10px!important}
+.study-mobile-context b,.study-mobile-context span{font-size:11px!important}
+.study-mobile-menu{font-size:10px!important}
+.study-mobile-nav a{font-size:13px!important;line-height:1.38!important}
+.whatsapp-cta{font-family:var(--font-body)!important;font-size:13px!important}
+
+@media(max-width:1050px){
+  .display{font-size:clamp(50px,7vw,70px)!important}
+  .display.small{font-size:clamp(34px,5.2vw,47px)!important}
+  .lede{font-size:16px!important}
+  .budget-price strong{font-size:58px!important}
+}
+
+@media(max-width:700px){
+  :root{
+    --fs-label:10px;
+    --fs-support:11px;
+    --fs-body:13.5px;
+    --fs-body-lg:14.5px;
+    --fs-card-title:16px;
+  }
+  html,body{font-size:15px!important}
+  .display{font-size:clamp(42px,12vw,54px)!important;line-height:.99!important;letter-spacing:-.04em!important}
+  .display.small{font-size:clamp(30px,8.4vw,38px)!important;line-height:1.06!important;letter-spacing:-.032em!important}
+  .lede,main section.hero .lede{font-size:14.5px!important;line-height:1.64!important}
+  main section.hero .arabic-title{font-size:clamp(34px,9.8vw,42px)!important}
+  main section.hero .hero-line{font-size:clamp(18px,4.9vw,21px)!important;line-height:1.32!important}
+  main section.hero .chip{font-size:10.5px!important}
+  main section.hero .hero-panel>strong{font-size:22px!important}
+  main section.hero .meta-lines div{font-size:10.5px!important}
+  main section.hero .meta-lines b{font-size:11.5px!important}
+  main section.hero .metric-grid article strong{font-size:13px!important}
+  main section.hero .metric-grid article p{font-size:12px!important}
+  .statement-card h3{font-size:27px!important}
+  .statement-card p{font-size:13.5px!important}
+  .concept-card h3,.guest-card h3,.timeline-row h3{font-size:20px!important}
+  .callout h3{font-size:22px!important}
+  .card h3,.axis-card h3,.audience-card h3,.segment-card h3,.production-grid h3,.sponsor-grid h3,.growth-path h3,.fit-list h3{font-size:16px!important}
+  .card p,.concept-card p,.axis-card p,.audience-card p,.guest-card p,.segment-card p,.production-grid p,.sponsor-grid p,.growth-path p,.timeline-row p,.host-role p,.host-qualities p,.fit-list p{font-size:13.5px!important;line-height:1.64!important}
+  .research-strip p{font-size:12px!important}
+  .research-strip a,.guest-card a,.source-note,.format-note{font-size:11px!important}
+  .episode-hero blockquote{font-size:22px!important}
+  .episode-badge strong{font-size:44px!important}
+  .host-role h3{font-size:28px!important}
+  .flow-main strong{font-size:25px!important}
+  .proposal-box strong{font-size:21px!important}
+  .proposal-box li{font-size:13px!important}
+  .final-credit strong{font-size:22px!important}
+  .budget-price strong{font-size:50px!important}
+  .budget-price span{font-size:12px!important}
+  .budget-anchor-copy p{font-size:13.5px!important}
+  .budget-cadence strong{font-size:24px!important}
+  .budget-run>strong{font-size:37px!important}
+  .budget-run>div{font-size:19px!important}
+  .budget-subhead h3{font-size:21px!important}
+  .budget-lines span{font-size:11.5px!important}
+  .budget-lines b{font-size:13px!important}
+  .launch-price{font-size:43px!important}
+  .budget-launch p,.budget-efficiency p{font-size:12.5px!important}
+  .budget-launch li{font-size:12px!important}
+  .budget-efficiency strong{font-size:17px!important}
+  .study-mobile-context b,.study-mobile-context span{font-size:10.5px!important}
+  .study-mobile-nav a{font-size:12.5px!important}
+  .whatsapp-cta{font-size:12.5px!important}
+}
+
+@media(max-width:420px){
+  .display{font-size:clamp(40px,11.7vw,49px)!important}
+  .display.small{font-size:clamp(28px,8vw,35px)!important}
+  .lede,main section.hero .lede{font-size:14px!important}
+  main section.hero .hero-line{font-size:18px!important}
+  .statement-card h3{font-size:25px!important}
+  .budget-price strong{font-size:46px!important}
+  .launch-price{font-size:39px!important}
+}
+
+@media print{
+  .display{font-size:56px!important}
+  .display.small{font-size:40px!important}
+  .lede{font-size:14px!important}
+  .card p,.concept-card p,.axis-card p,.audience-card p,.guest-card p,.segment-card p,.timeline-row p{font-size:11px!important}
+}
