@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,75..150,300..800&display=swap");
+
+/* Exact display-font treatment from the feasibility-study reference. */
+.display,
+.hero-panel>strong,
+.statement-card h3,
+.callout h3,
+.timeline-row h3,
+.episode-hero blockquote,
+.host-role h3,
+.flow-main strong,
+.proposal-box strong,
+.final-credit strong{
+  font-family:'Roboto Flex','Arial Narrow',sans-serif !important;
+  font-stretch:135% !important;
+  font-variation-settings:'wdth' 135 !important;
+  font-optical-sizing:auto;
+  font-synthesis:none;
+}
+
+/* Main hero + section titles: exact reference settings. */
+.display{
+  font-weight:520 !important;
+  line-height:.94 !important;
+  font-size:clamp(46px,7vw,100px) !important;
+  letter-spacing:-.055em !important;
+  margin:0;
+}
+
+.display.small{
+  font-weight:520 !important;
+  line-height:.94 !important;
+  font-size:clamp(38px,5vw,70px) !important;
+  letter-spacing:-.055em !important;
+  max-width:1130px;
+}
+
+/* Keep the same font proportions on smaller screens while only scaling size. */
+@media(max-width:1050px){
+  .display{font-size:clamp(46px,7vw,82px) !important}
+  .display.small{font-size:clamp(36px,5vw,60px) !important}
+}
+
+@media(max-width:760px){
+  .display{
+    font-size:clamp(42px,12vw,56px) !important;
+    line-height:.97 !important;
+    letter-spacing:-.045em !important;
+    font-variation-settings:'wdth' 135 !important;
+  }
+  .display.small{
+    font-size:clamp(31px,8.8vw,42px) !important;
+    line-height:1.02 !important;
+    letter-spacing:-.035em !important;
+    font-variation-settings:'wdth' 135 !important;
+    max-width:100%;
+  }
+}
+
+@media(max-width:410px){
+  .display{font-size:clamp(40px,12vw,52px) !important}
+  .display.small{font-size:clamp(29px,8.5vw,38px) !important}
+}
