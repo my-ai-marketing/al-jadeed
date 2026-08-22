@@ -91,6 +91,27 @@
     target.scrollIntoView({behavior:'smooth',block:'start'});
   };
 
+  const mobileJumpTo=id=>{
+    const target=document.getElementById(id);
+    if(!target) return;
+
+    setMobileOpen(false);
+
+    const performJump=()=>{
+      const headerHeight=mobileTop?.getBoundingClientRect().height||0;
+      const top=Math.max(0,target.getBoundingClientRect().top+window.scrollY-headerHeight);
+      try{
+        history.replaceState(null,'',`#${id}`);
+      }catch(_){
+        location.hash=id;
+      }
+      window.scrollTo({top,behavior:'auto'});
+    };
+
+    requestAnimationFrame(()=>requestAnimationFrame(performJump));
+    setTimeout(performJump,180);
+  };
+
   chapter.addEventListener('click',()=>setDesktopOpen(!document.body.classList.contains('study-nav-open')));
   closeOverlay?.addEventListener('click',()=>setDesktopOpen(false));
   overlay.addEventListener('click',e=>{if(e.target===overlay)setDesktopOpen(false)});
@@ -98,11 +119,11 @@
   overlayLinks.forEach(link=>link.addEventListener('click',e=>{e.preventDefault();jumpTo(link.dataset.target)}));
   mobileMenu.addEventListener('click',()=>setMobileOpen(true));
   mobileClose?.addEventListener('click',()=>setMobileOpen(false));
-
-  /* Mobile uses the browser's native hash navigation for maximum reliability on iOS/Android.
-     Close the fixed drawer synchronously, then allow the anchor's default action to scroll. */
-  mobileLinks.forEach(link=>link.addEventListener('click',()=>{
-    setMobileOpen(false);
+  mobileLinks.forEach(link=>link.addEventListener('click',e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    const id=link.dataset.target||(link.getAttribute('href')||'').replace('#','');
+    mobileJumpTo(id);
   }));
 
   mobileDrawer.querySelector('[data-study-present]')?.addEventListener('click',()=>{
