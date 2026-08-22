@@ -79,6 +79,34 @@
   line-height:1.65!important;
 }
 
+/* Sponsor category cards: stronger hierarchy and more balanced spacing */
+.sponsor-grid{
+  gap:14px!important;
+}
+.sponsor-grid article{
+  min-height:182px!important;
+  padding:25px 21px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+}
+.sponsor-grid article>span{
+  font-size:12px!important;
+  line-height:1.2!important;
+  letter-spacing:.12em!important;
+  margin-bottom:25px!important;
+}
+.sponsor-grid h3{
+  font-size:18px!important;
+  line-height:1.3!important;
+  margin:0 0 8px!important;
+}
+.sponsor-grid p{
+  font-size:14px!important;
+  line-height:1.65!important;
+  margin:0!important;
+}
+
 /* Why Al Jadeed */
 .fit-score span{
   font-size:11.5px!important;
@@ -95,6 +123,98 @@
 .fit-list p{
   font-size:14px!important;
   line-height:1.65!important;
+}
+
+/* Budget run cards: separate label, episode count, price and note into a clear hierarchy */
+.budget-run-grid{
+  gap:16px!important;
+}
+.budget-run{
+  display:grid!important;
+  grid-template-columns:auto 1fr!important;
+  grid-template-areas:
+    "label label"
+    "count unit"
+    "price price"
+    "note note"!important;
+  align-content:start!important;
+  align-items:end!important;
+  min-height:210px!important;
+  padding:26px!important;
+}
+.budget-run>span{
+  grid-area:label!important;
+  display:block!important;
+  font-size:12px!important;
+  line-height:1.3!important;
+  letter-spacing:.13em!important;
+  margin:0 0 18px!important;
+}
+.budget-run>strong{
+  grid-area:count!important;
+  display:block!important;
+  font-size:54px!important;
+  line-height:.9!important;
+  margin:0!important;
+}
+.budget-run>b{
+  grid-area:unit!important;
+  align-self:end!important;
+  font-size:13px!important;
+  line-height:1.2!important;
+  margin:0 0 5px 8px!important;
+}
+.budget-run>div{
+  grid-area:price!important;
+  font-size:24px!important;
+  line-height:1.15!important;
+  margin:18px 0 0!important;
+}
+.budget-run>small{
+  grid-area:note!important;
+  display:block!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+  margin:8px 0 0!important;
+}
+.budget-run-note{
+  font-size:12.5px!important;
+  line-height:1.6!important;
+  margin-top:12px!important;
+}
+
+/* Budget detail section: stop launch card stretching to the height of the breakdown */
+.budget-detail-grid{
+  align-items:start!important;
+}
+.budget-launch{
+  align-self:start!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:28px!important;
+}
+.budget-launch .kicker{
+  font-size:11.5px!important;
+  line-height:1.4!important;
+}
+.launch-price{
+  font-size:clamp(52px,4.5vw,64px)!important;
+  line-height:1!important;
+  margin:16px 0!important;
+}
+.budget-launch p{
+  font-size:14px!important;
+  line-height:1.7!important;
+  margin:0!important;
+}
+.budget-launch ul{
+  margin:20px 0 0!important;
+  padding-left:20px!important;
+}
+.budget-launch li{
+  font-size:13.5px!important;
+  line-height:1.55!important;
+  margin:10px 0!important;
 }
 
 /* Closing proposal */
@@ -197,6 +317,64 @@
   }
   .sources p{
     font-size:12.5px!important;
+  }
+
+  .sponsor-grid article{
+    min-height:0!important;
+    padding:20px!important;
+  }
+  .sponsor-grid article>span{
+    font-size:11.5px!important;
+    margin-bottom:18px!important;
+  }
+  .sponsor-grid h3{
+    font-size:17.5px!important;
+    margin-bottom:7px!important;
+  }
+  .sponsor-grid p{
+    font-size:14px!important;
+  }
+
+  .budget-run{
+    min-height:0!important;
+    padding:21px!important;
+  }
+  .budget-run>span{
+    font-size:11.5px!important;
+    margin-bottom:16px!important;
+  }
+  .budget-run>strong{
+    font-size:48px!important;
+  }
+  .budget-run>b{
+    font-size:12.5px!important;
+    margin-bottom:4px!important;
+  }
+  .budget-run>div{
+    font-size:22px!important;
+    margin-top:16px!important;
+  }
+  .budget-run>small,
+  .budget-run-note{
+    font-size:12.5px!important;
+  }
+
+  .budget-launch{
+    padding:22px 19px!important;
+  }
+  .budget-launch .kicker{
+    font-size:11px!important;
+  }
+  .launch-price{
+    font-size:48px!important;
+    margin:14px 0!important;
+  }
+  .budget-launch p{
+    font-size:14px!important;
+  }
+  .budget-launch li{
+    font-size:13.5px!important;
+    margin:9px 0!important;
   }
 }
 
