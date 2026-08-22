@@ -88,13 +88,15 @@ jobs:
               )
 
           production_css = '\n'.join([
+              '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">',
               '<link rel="stylesheet" href="study-nav.css?v=20260822-1">',
               '<link rel="stylesheet" href="presentation-fixes.css?v=20260822-1">',
               '<link rel="stylesheet" href="typography-fix.css?v=20260822-1">',
               '<link rel="stylesheet" href="budget-section.css?v=20260822-1">',
               '<link rel="stylesheet" href="whatsapp-cta.css?v=20260822-1">',
+              '<link rel="stylesheet" href="typography-polish.css?v=20260822-2">',
           ])
-          if 'budget-section.css?v=20260822-1' not in html:
+          if 'typography-polish.css?v=20260822-2' not in html:
               html = html.replace('</head>', production_css + '\n</head>')
 
           scripts = '\n'.join([
