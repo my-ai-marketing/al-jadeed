@@ -96,43 +96,6 @@
     if (event.key === 'Escape' && body.classList.contains('present-mode')) setPresentMode(false);
   });
 
-  /* Mobile navigation fallback for the study navigation injected at deploy time. */
-  const setStudyMobileOpen = open => {
-    const drawer = document.querySelector('.study-mobile-drawer');
-    const trigger = document.querySelector('.study-mobile-menu');
-    body.classList.toggle('study-mobile-open', open);
-    trigger?.setAttribute('aria-expanded', String(open));
-    drawer?.setAttribute('aria-hidden', String(!open));
-  };
-
-  const mobileNavStyle = document.createElement('style');
-  mobileNavStyle.textContent = `
-    @media(max-width:1050px){
-      .study-mobile-menu{pointer-events:auto!important;position:relative;z-index:2}
-      .study-mobile-drawer[aria-hidden="false"]{transform:translateY(0)!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
-      .study-mobile-drawer[aria-hidden="true"]{pointer-events:none!important}
-    }
-  `;
-  document.head.appendChild(mobileNavStyle);
-
-  document.addEventListener('click', event => {
-    const target = event.target instanceof Element ? event.target : null;
-    if (!target) return;
-
-    if (target.closest('.study-mobile-menu')) {
-      setStudyMobileOpen(true);
-      return;
-    }
-
-    if (target.closest('.study-mobile-close')) {
-      setStudyMobileOpen(false);
-      return;
-    }
-
-    const mobileLink = target.closest('.study-mobile-nav a');
-    if (mobileLink) setStudyMobileOpen(false);
-  });
-
   const loadWhatsAppCTA = () => {
     if (!document.querySelector('link[data-whatsapp-cta]')) {
       const style = document.createElement('link');
